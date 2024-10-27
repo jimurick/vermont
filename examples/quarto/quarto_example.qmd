@@ -1,0 +1,26 @@
+---
+title: hi
+author: "Jim Urick"
+format:
+  html:
+    embed-resources: true
+    monofont: Fira Code
+    html-math-method: mathjax
+    include-in-header:
+      - text: <script type="text/javascript" src="./latex.js"></script>
+---
+
+# One
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+x <- 1:5
+x <- tibble(x = x) |> filter(x != 3) |> pull(x)
+print("hi")
+```
+
+
+$$
+\R
+$$
+

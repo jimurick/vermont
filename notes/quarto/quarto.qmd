@@ -18,6 +18,20 @@ $$
 \y=\X\betaB, \beta
 $$
 
+# Header
+
+```
+format:
+  html:
+    embed-resources: true
+    monofont: Fira Code
+    html-math-method: mathjax
+    include-in-header:
+      - text: <script type="text/javascript" src="./latex.js"></script>
+```
+
+
+# Code Chunks and Plots
 
 ```{r}
 head(mtcars)
