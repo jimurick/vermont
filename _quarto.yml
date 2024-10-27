@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - notes/quarto/quarto.qmd
+    - notes/shiny/shiny.qmd
+    - notes/website/website.qmd
+
+website:
+  title: "Vermont State Notes"
+  # I made this with paint and converted png->ico
+  favicon: jim.ico
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: notes/quarto/quarto.qmd
+        text: Quarto
+      - href: notes/shiny/shiny.qmd
+        text: Shiny
+      - href: notes/website/website.qmd
+        text: Website
+    tools:
+      - icon: github
+        href: https://github.com/jimurick/vermont
+
+format:
+  html:
+    theme: scripts/styles.scss
+    css: scripts/styles.scss
+    toc: true
+    monofont: Fira Code
+    html-math-method: mathjax
+    include-in-header:
+      - text: <script type="text/javascript" src="/scripts/util.js"></script>
+      - text: <script type="text/javascript" src="/scripts/latex.js"></script>

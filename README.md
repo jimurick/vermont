@@ -1,2 +1,0 @@
-# vermont
-Notes on R

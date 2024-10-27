@@ -1,0 +1,12 @@
+---
+title: "vermont"
+format:
+  gfm:
+    html-math-method: mathjax
+    output-file: README.md
+editor: visual
+---
+
+Some notes, mostly on R
+
+There are examples in [examples](./examples) folder.

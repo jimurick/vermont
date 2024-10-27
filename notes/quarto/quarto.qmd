@@ -1,0 +1,58 @@
+---
+title: "Quarto Notebook Example"
+format: html
+---
+
+```{r setup}
+#| echo: false
+#| include: false
+```
+
+This section will describe the example in the repo's `{r} repo_link("examples folder", "examples")`.
+
+$$
+x\in\R
+$$
+
+$$
+\y=\X\betaB, \beta
+$$
+
+
+```{r}
+head(mtcars)
+```
+
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+theme_set(theme_bw())
+
+df <- mtcars
+df |>
+  ggplot(aes(mpg, disp)) +
+  geom_point()
+```
+
+
+
+
+# TODO: image preview example
+
+- `{r} image_preview_on_hover("image link text", "img/does_not_exist.PNG")`
+
+
+# References
+
+- Hadley Wickham books
+  - [R for Data Science](https://r4ds.had.co.nz/)
+  - [ggplot2](https://ggplot2-book.org/)
+  - [Mastering Shiny](https://mastering-shiny.org/)
+- More advanced books
+  - [R Packages](https://r-pkgs.org/)
+  - [Advanced R](https://adv-r.hadley.nz/)
+  - [Tidy Modeling with R](https://www.tmwr.org/)
+- The Quarto website has notes on [websites](https://quarto.org/docs/websites/), [slides](https://quarto.org/docs/presentations/revealjs/)
+- RStudio
+  - [Install Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions)
+

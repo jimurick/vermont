@@ -1,0 +1,15 @@
+---
+title: "Vermont State Notes"
+author: "Jim Urick"
+format: html
+---
+
+
+I plan to put notes here about
+
+- [Quarto notebooks](./examples/quarto/quarto.html)
+    - including math with mathjax
+    - plots, some of which are interactive
+    - organizing notes into a website with github pages
+- Shiny
+- Quarto websites

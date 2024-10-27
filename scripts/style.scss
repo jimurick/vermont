@@ -1,0 +1,73 @@
+/*-- scss:defaults --*/
+/*
+$body-bg: #191919;
+$body-color: #fff;
+$link-color: #42affa;
+*/
+
+$presentation-block-margin: 0px;
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$white-dark:  #fbfbfb !default;
+$blue-dark:   #005587 !default;
+$pink:        #D01C65 !default;
+$yellow:      #FF7518 !default;
+$green:       #799A3E !default;
+$cyan:        #33A0BB !default;
+$cyan-dark:   #26778b !default;
+$brown:       #958579 !default;
+$brown-light: #e4e0dc !default;
+$brown-dark:  #665546 !default;
+
+$primary:       $cyan !default;
+$secondary:     $cyan-dark !default;
+$success:       $green !default;
+$info:          $brown !default;
+$warning:       $yellow !default;
+$danger:        $pink !default;
+$light:         $brown-light !default;
+$dark:          $brown-dark !default;
+
+
+/*-- scss:rules --*/
+
+.image-preview {
+  position: fixed;
+  z-index: 1000;
+  display: none;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
+}
+
+.image-preview img {
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+
+// https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.w3schools.com%2Fcolors%2Fcolors_names.asp&data=05%7C02%7Curickj%40chop.edu%7C42c27c534c834e3bc94708dcf67a9edf%7Ca611241607b041a59bb1d146b575c975%7C0%7C0%7C638656253722244208%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=62vDZ8YXHtnQluCNScR%2FnXEOcEOi2%2BkrxDeXYd%2BzJ4I%3D&reserved=0
+// TODO: This should probably relate to $warning/$danger above
+.error-text {
+  font-weight: bold;
+  color: red;
+  background-color: pink;
+}
+
+
+/* css styles */
+

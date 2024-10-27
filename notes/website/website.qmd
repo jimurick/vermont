@@ -1,0 +1,27 @@
+---
+title: "Quarto Website Example"
+format: html
+---
+
+```{r setup}
+#| echo: false
+#| include: false
+```
+
+This section will describe the example in the main repo folder and the `{r} repo_link("notes folder", "notes")`.
+
+[Quarto websites](https://quarto.org/docs/websites/)
+
+# Files
+
+- `_quarto.yml`
+- `.gitignore`
+- `.Rprofile`
+- `index.qmd`
+- `README.qmd`
+- `scipts/`
+    - `util.R` includes variables and functions I want to be available everywhere in the project.
+    - `style.scss` is a SASS file used by this website
+    - `util.js`
+    - `latex.js` includes some javascript code that's the mathjax analog of $\LaTeX$ def/newcommand type commands (see the [mathjax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
+

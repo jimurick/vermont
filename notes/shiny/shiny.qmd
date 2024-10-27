@@ -1,0 +1,25 @@
+---
+title: "Shiny App Example"
+format: html
+---
+
+```{r setup}
+#| echo: false
+#| include: false
+```
+
+This section will describe the example in the repo's `{r} repo_link("examples folder", "examples")`.
+
+[Quarto websites](https://quarto.org/docs/websites/)
+
+# My R Package
+
+This shiny app uses an R package I 
+[hospitalstars](https://github.com/jimurick/hospitalstars)
+
+It may be interesting because
+
+- Most data manipulation is done with the package `data.table`, because it's much faster than `dplyr`.
+- There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. It was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter from the SAS implementation ([`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm)).
+
+
