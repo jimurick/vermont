@@ -33,7 +33,7 @@ format:
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
-      - text: <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
       - text: <script type="text/javascript" src="/scripts/util.js"></script>
       - text: <script type="text/javascript" src="/scripts/latex.js"></script>
 
