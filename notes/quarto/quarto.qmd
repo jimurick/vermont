@@ -8,7 +8,7 @@ format: html
 #| include: false
 ```
 
-This section will describe the example in the repo's `{r} repo_link("examples folder", "examples")`.
+This section will describe the example in the repo's `{r} repo_link("examples folder", "examples/quarto_example.qmd")`.
 
 $$
 x\in\R
@@ -29,6 +29,14 @@ format:
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
 ```
+
+[HTML Basics](https://quarto.org/docs/output-formats/html-basics.html)
+
+[embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained)
+
+[html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations)
+
+[include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes)
 
 
 # Code Chunks and Plots
