@@ -19,6 +19,7 @@ This section will describe the example in the main repo folder and the `{r} repo
 - `.Rprofile`
 - `index.qmd`
 - `README.qmd`
+- `jim.ico` - I wrote my name with MS Paint, and converted the png file to ico
 - `scipts/`
     - `util.R` includes variables and functions I want to be available everywhere in the project.
     - `style.scss` is a SASS file used by this website

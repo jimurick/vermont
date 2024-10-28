@@ -8,7 +8,7 @@ format: html
 #| include: false
 ```
 
-This section will describe the **Quarto notebook** example in the repo's `{r} repo_link("examples folder", "examples/quarto/quarto.qmd")`.
+This section will describe the **Quarto notebook** example in the repo's `{r} repo_link("examples folder", "examples/quarto/quarto_example.qmd")`.
 
 $$
 x\in\R

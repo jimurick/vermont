@@ -25,6 +25,6 @@
     "href": "notes/website/website.html",
     "title": "Quarto Website Example",
     "section": "",
-    "text": "This section will describe the example in the main repo folder and the notes folder.\nQuarto websites\n\nFiles\n\n_quarto.yml\n.gitignore\n.Rprofile\nindex.qmd\nREADME.qmd\nscipts/\n\nutil.R includes variables and functions I want to be available everywhere in the project.\nstyle.scss is a SASS file used by this website\nutil.js\nlatex.js includes some javascript code that’s the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)"
+    "text": "This section will describe the example in the main repo folder and the notes folder.\nQuarto websites\n\nFiles\n\n_quarto.yml\n.gitignore\n.Rprofile\nindex.qmd\nREADME.qmd\njim.ico - I wrote my name with MS Paint, and converted the png file to ico\nscipts/\n\nutil.R includes variables and functions I want to be available everywhere in the project.\nstyle.scss is a SASS file used by this website\nutil.js\nlatex.js includes some javascript code that’s the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)"
   }
 ]
