@@ -7,7 +7,7 @@ format: html
 
 I plan to put notes here about
 
-- [Quarto notebooks](./examples/quarto/quarto.html)
+- [Quarto notebooks](./notes/quarto/quarto.html)
     - including math with mathjax
     - plots, some of which are interactive
     - organizing notes into a website with github pages
