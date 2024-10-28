@@ -25,3 +25,5 @@ This section will describe the example in the main repo folder and the `{r} repo
     - `util.js`
     - `latex.js` includes some javascript code that's the mathjax analog of $\LaTeX$ def/newcommand type commands (see the [mathjax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
 
+
+

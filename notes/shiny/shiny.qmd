@@ -8,9 +8,9 @@ format: html
 #| include: false
 ```
 
-This section will describe the example in the repo's `{r} repo_link("examples folder", "examples")`.
+This section will describe the example in the repo's `{r} repo_link("examples folder", "examples/shiny")`.
 
-[Quarto websites](https://quarto.org/docs/websites/)
+The app is posted on shinyapps.io: <https://jimurick.shinyapps.io/HospitalStarRatings/>
 
 # My R Package
 

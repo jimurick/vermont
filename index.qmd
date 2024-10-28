@@ -12,4 +12,5 @@ I plan to put notes here about
     - plots, some of which are interactive
     - organizing notes into a website with github pages
 - Shiny
+    - App posted here: <https://jimurick.shinyapps.io/HospitalStarRatings/>
 - Quarto websites
