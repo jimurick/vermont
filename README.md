@@ -3,6 +3,9 @@
 
 Some notes, mostly on R
 
-There are examples in [examples](./examples) folder.
+Read the GitHub page for more info:
+<https://jimurick.github.io/vermont/>
+
+There are examples in the [examples](./examples) folder.
 
 Shiny app: <https://jimurick.shinyapps.io/HospitalStarRatings/>

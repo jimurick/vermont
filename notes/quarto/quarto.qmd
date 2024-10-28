@@ -11,7 +11,7 @@ format: html
 This section will describe the **Quarto notebook** example in the repo's `{r} repo_link("examples folder", "examples/quarto/quarto_example.qmd")`.
 
 $$
-x\in\R
+\eps\in\R
 $$
 
 $$
@@ -20,7 +20,12 @@ $$
 
 # Header
 
+The top of the file has this section of YAML delimited by 3 dashes above and below:
+
 ```
+---
+title: Quarto Example
+author: "Jim Urick"
 format:
   html:
     embed-resources: true
@@ -28,15 +33,15 @@ format:
     html-math-method: mathjax
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
+---
 ```
 
-[HTML Basics](https://quarto.org/docs/output-formats/html-basics.html)
+You can find lots of options in the [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) documentation page. The ones I used are
 
-[embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained)
-
-[html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations)
-
-[include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes)
+- [embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
+- [monofont](https://quarto.org/docs/output-formats/html-themes.html#basic-options) to use Fira Code
+- [html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
+- [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) adds 
 
 
 # Code Chunks and Plots

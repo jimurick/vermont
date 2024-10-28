@@ -1,5 +1,5 @@
 ---
-title: hi
+title: Quarto Example
 author: "Jim Urick"
 format:
   html:

@@ -219,24 +219,32 @@ window.Quarto = {
 
 <p>This section will describe the <strong>Quarto notebook</strong> example in the repo’s <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd">examples folder</a>.</p>
 <p><span class="math display">\[
-x\in\R
+\eps\in\R
 \]</span></p>
 <p><span class="math display">\[
 \y=\X\betaB, \beta
 \]</span></p>
 <section id="header" class="level1">
 <h1>Header</h1>
-<pre><code>format:
+<p>The top of the file has this section of YAML delimited by 3 dashes above and below:</p>
+<pre><code>---
+title: Quarto Example
+author: "Jim Urick"
+format:
   html:
     embed-resources: true
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
-      - text: &lt;script type="text/javascript" src="./latex.js"&gt;&lt;/script&gt;</code></pre>
-<p><a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics</a></p>
-<p><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained">embed-resources</a></p>
-<p><a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">html-math-methods</a></p>
-<p><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a></p>
+      - text: &lt;script type="text/javascript" src="./latex.js"&gt;&lt;/script&gt;
+---</code></pre>
+<p>You can find lots of options in the <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics</a> documentation page. The ones I used are</p>
+<ul>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained">embed-resources</a> renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.</li>
+<li><a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">monofont</a> to use Fira Code</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">html-math-methods</a> specifies <a href="https://www.mathjax.org/">MathJax</a> as the engine for rendering math</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds</li>
+</ul>
 </section>
 <section id="code-chunks-and-plots" class="level1">
 <h1>Code Chunks and Plots</h1>

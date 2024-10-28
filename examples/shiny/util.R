@@ -1,5 +1,7 @@
 
 
+# https://unleash-shiny.rinterface.com/htmltools-overview#htmltools-modern
+
 mySelectInput <- function(...) {
   args <- list(...)
   x <- do.call(selectInput, args)

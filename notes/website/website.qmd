@@ -28,3 +28,18 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 
 
+# Rendering
+
+```
+quarto render
+```
+
+```
+quarto render README.qmd -t md
+```
+
+
+
+
+
+
