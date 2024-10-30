@@ -1,0 +1,7 @@
+
+/* By default, there's almost no space between columns in a table. This just
+ * adds a little to make a table in the "About" page more readable.
+ */
+table.about-table td {
+  padding-right: 15px;
+}

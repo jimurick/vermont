@@ -13,9 +13,28 @@ The package is based on two CMS sources:
 
 ## Tab 1: Map
 
+I took the data in the package's dataframe `hospitalstars::hospital_info_df` and geocoded it with Google's [geocoding API](https://developers.google.com/maps/documentation/geocoding/overview) in python.
+
 
 ## Tab 2: Plots
 
+CMS collects data from most larger hospitals to calculate 
+
+```{r echo=FALSE, layout="l-body-outset"}
+hospitalstars::measure_info_df |>
+  dplyr::arrange(desc(report_date)) |>
+  dplyr::transmute(ID = measure_id, Metric = measure_name) |>
+  dplyr::slice(c(1, 9, 40)) |>
+  knitr::kable(format = "html", table.attr='class="about-table"')
+```
+
+<br/>The metrics are divided into are 5 groups:
+
+- Mortality
+- Patient Experience
+- Process
+- Readmission
+- Safety
 
 ## Tab 3: About
 
