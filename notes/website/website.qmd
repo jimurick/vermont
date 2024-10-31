@@ -12,7 +12,7 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 [Quarto websites](https://quarto.org/docs/websites/)
 
-# Files
+## Files
 
 - `_quarto.yml`
 - `.gitignore`
@@ -28,7 +28,7 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 
 
-# Rendering
+## Rendering
 
 ```
 quarto render

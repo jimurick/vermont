@@ -1,12 +1,14 @@
 library(shiny)
-library(bslib)         # choose a theme for the HTML/CSS
+library(hospitalstars) # my package on github with most hospital data
+library(tidyverse)     # for manipulating data and making the initial plot
 library(leaflet)       # for the map
 library(plotly)        # for the plot
 library(markdown)      # for the "About" tab
-library(tidyverse)     # for manipulating data and making the initial plot
-library(hospitalstars) # my package on github with most hospital data
 
 source("util.R")       # one extra function
+
+# Default ggplot plots to the black & white theme
+theme_set(theme_bw())
 
 # Initial data preparation -----------------------------------------------------
 
@@ -15,9 +17,8 @@ df <- readRDS("www/hospital_df.Rda")
 # Options for "Choose a State" box
 state_choices <- sort(unique(hospital_info_df$state))
 # Options for "Choose a Hospital" box
-hospital_choices <- setNames(
-  hospital_info_df$PROVIDER_ID, hospital_info_df$hospital_name
-)
+hospital_choices <-
+  deframe(hospital_info_df[, c("hospital_name", "PROVIDER_ID")])
 last_report_date <- max(hospitalstars::measure_info_df$report_date)
 # One row per measure with general info about the metrics used in the ratings
 measure_info_df <-
@@ -31,8 +32,6 @@ measure_choices <-
   nest(measures = c(measure_id, measure_name)) |>
   mutate(measures = map(measures, ~setNames(.x$measure_id, .x$measure_name))) |>
   deframe()
-# Default ggplot plots to the bw (black & white) theme
-theme_set(theme_bw())
 
 
 # `ui`: the user interface -----------------------------------------------------
@@ -41,7 +40,6 @@ ui <-
   navbarPage(
     id = "map-navbar",
     title = "Hospital ⭐ Ratings",
-    #theme = bs_theme(bootswatch = "flatly"),
 
     # The three tabs: Map, Plot and About
     tabPanel(
@@ -107,7 +105,6 @@ server <- function(input, output, session) {
         data = r_hospitals_df(), lat = ~lat, lng = ~lng,
         label = ~hospital_name, popup = ~popup
       )
-    
   })
 
   # When a "View Data" button is clicked, the javascript function
@@ -145,22 +142,27 @@ server <- function(input, output, session) {
   })
   
   output$plot <- renderPlotly({
+    # Sometimes `input$provider_id` isn't set. Make sure it is:
     req(input$provider_id)
+    
     title <-
       str_c(ifelse(r_measure_info()$higher_is_better, "Higher", "Lower"),
             " scores are better")
-
     box_color <- "#888"
     line_color <- "dodgerblue"
+    
+    # Make a ggplot2 plot
     p <-
       r_hospital_scores_df() |>
       ggplot(aes(`Report Date`, Score)) +
-      geom_boxplot(data = r_all_scores_df(),
-                   mapping = aes(x = `Report Date`, y = Score, group = `Report Date`)) +
+      geom_boxplot(
+        data = r_all_scores_df(),
+        mapping = aes(x = `Report Date`, y = Score, group = `Report Date`)
+      ) +
       geom_point(color = line_color, size = 3) +
       geom_line(color = line_color, linewidth = 1.5, alpha = 0.5) +
       ggtitle(title)
-    
+    # Convert it to plotly, so it's more interactive
     p |> plotly::ggplotly()
   })
   

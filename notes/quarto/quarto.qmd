@@ -70,17 +70,21 @@ df |>
 - `{r} image_preview_on_hover("image link text", "img/does_not_exist.PNG")`
 
 
-# References
 
-- Hadley Wickham books
-  - [R for Data Science](https://r4ds.had.co.nz/)
+## References
+
+- $\LaTeX$ and MathJax
+  - [$\LaTeX$ Cheat Sheet](https://wch.github.io/latexsheet/)
+  - [The Comprehensive $\LaTeX$ Symbol List](https://us.mirrors.cicku.me/ctan/info/symbols/comprehensive/symbols-a4.pdf)
+  - MathJax documentation for [defining TeX macros](https://docs.mathjax.org/en/latest/input/tex/macros.html) in javascript
+- R
+  - [R for Data Science](https://r4ds.hadley.nz/) is a good intro to `dplyr` and several related packages.
   - [ggplot2](https://ggplot2-book.org/)
-  - [Mastering Shiny](https://mastering-shiny.org/)
-- More advanced books
-  - [R Packages](https://r-pkgs.org/)
-  - [Advanced R](https://adv-r.hadley.nz/)
-  - [Tidy Modeling with R](https://www.tmwr.org/)
-- The Quarto website has notes on [websites](https://quarto.org/docs/websites/), [slides](https://quarto.org/docs/presentations/revealjs/)
-- RStudio
+  - [Julia Silge's YouTube](https://www.youtube.com/@JuliaSilge/videos) has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with [tidymodels](https://www.tidymodels.org/)
+- Other
+  - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+  - The Quarto website's [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) includes a bunch of links from above.
   - [Install Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions)
+
+
 

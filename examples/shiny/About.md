@@ -21,11 +21,15 @@ in python.
 
 ## Tab 2: Plots
 
-CMS collects data from most larger hospitals to calculate
+CMS collects data from most larger hospitals to calculate the star
+ratings annually. There are about 50 measures that are used in the
+calculation; this table gives an example of three:
 
 <table class="about-table" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
+<th style="text-align: left;"
+data-quarto-table-cell-role="th">Group</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">ID</th>
 <th style="text-align: left;"
 data-quarto-table-cell-role="th">Metric</th>
@@ -33,15 +37,18 @@ data-quarto-table-cell-role="th">Metric</th>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Mortality</td>
 <td style="text-align: left;">MORT_30_AMI</td>
 <td style="text-align: left;">Acute Myocardial Infarction (AMI) 30-Day
 Mortality Rate</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Patient Experience</td>
 <td style="text-align: left;">H_COMP_2_STAR_RATING</td>
 <td style="text-align: left;">Doctor communication</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Safety</td>
 <td style="text-align: left;">HAI_1</td>
 <td style="text-align: left;">Central Line Associated Bloodstream
 Infection (ICU + select Wards)</td>
@@ -49,7 +56,7 @@ Infection (ICU + select Wards)</td>
 </tbody>
 </table>
 
-<br/>The metrics are divided into are 5 groups:
+The metrics are divided into are 5 groups:
 
 -   Mortality
 -   Patient Experience

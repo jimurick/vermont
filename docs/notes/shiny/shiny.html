@@ -125,7 +125,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#my-r-package" id="toc-my-r-package" class="nav-link active" data-scroll-target="#my-r-package">My R Package</a></li>
+  <li><a href="#my-r-package-hospitalstars" id="toc-my-r-package-hospitalstars" class="nav-link active" data-scroll-target="#my-r-package-hospitalstars">My R Package: <code>hospitalstars</code></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -153,13 +154,29 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This section will describe the example in the repo’s <a href="https://github.com/jimurick/vermont/blob/main/examples/shiny">examples folder</a>.</p>
 <p>The app is posted on shinyapps.io: <a href="https://jimurick.shinyapps.io/HospitalStarRatings/" class="uri">https://jimurick.shinyapps.io/HospitalStarRatings/</a></p>
-<section id="my-r-package" class="level1">
-<h1>My R Package</h1>
+<section id="my-r-package-hospitalstars" class="level2">
+<h2 class="anchored" data-anchor-id="my-r-package-hospitalstars">My R Package: <code>hospitalstars</code></h2>
 <p>This shiny app uses an R package I <a href="https://github.com/jimurick/hospitalstars">hospitalstars</a></p>
 <p>It may be interesting because</p>
 <ul>
 <li>Most data manipulation is done with the package <code>data.table</code>, because it’s much faster than <code>dplyr</code>.</li>
 <li>There is a C++ implementation of the <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> algorithm. It was taken from the <code>amap</code> package (<a href="https://github.com/cran/amap/blob/master/src/kmeans.cpp">here</a>) and modified to add a parameter from the SAS implementation (<a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm"><code>FASTCLUS</code></a>).</li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Books
+<ul>
+<li><a href="https://mastering-shiny.org/">Mastering Shiny</a></li>
+<li><a href="https://unleash-shiny.rinterface.com/">Outstanding User Interfaces with Shiny</a></li>
+<li><a href="https://r-pkgs.org/">R Packages</a></li>
+</ul></li>
+<li>Links
+<ul>
+<li><a href="https://gallery.htmlwidgets.org/">htmlwidgets Gallery</a></li>
+<li><a href="https://rstudio.github.io/bslib/">bslib</a></li>
+</ul></li>
 </ul>
 
 

@@ -12,7 +12,7 @@ This section will describe the example in the repo's `{r} repo_link("examples fo
 
 The app is posted on shinyapps.io: <https://jimurick.shinyapps.io/HospitalStarRatings/>
 
-# My R Package
+## My R Package: `hospitalstars`
 
 This shiny app uses an R package I 
 [hospitalstars](https://github.com/jimurick/hospitalstars)
@@ -23,3 +23,13 @@ It may be interesting because
 - There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. It was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter from the SAS implementation ([`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm)).
 
 
+
+## References
+
+- Books
+  - [Mastering Shiny](https://mastering-shiny.org/)
+  - [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/)
+  - [R Packages](https://r-pkgs.org/)
+- Links
+  - [htmlwidgets Gallery](https://gallery.htmlwidgets.org/)
+  - [bslib](https://rstudio.github.io/bslib/)

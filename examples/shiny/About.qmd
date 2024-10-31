@@ -18,17 +18,19 @@ I took the data in the package's dataframe `hospitalstars::hospital_info_df` and
 
 ## Tab 2: Plots
 
-CMS collects data from most larger hospitals to calculate 
+CMS collects data from most larger hospitals to calculate the star ratings annually. There are about 50 measures that are used in the calculation; this table gives an example of three:
 
 ```{r echo=FALSE, layout="l-body-outset"}
 hospitalstars::measure_info_df |>
   dplyr::arrange(desc(report_date)) |>
-  dplyr::transmute(ID = measure_id, Metric = measure_name) |>
+  dplyr::transmute(
+    Group = measure_group, ID = measure_id, Metric = measure_name
+  ) |>
   dplyr::slice(c(1, 9, 40)) |>
   knitr::kable(format = "html", table.attr='class="about-table"')
 ```
 
-<br/>The metrics are divided into are 5 groups:
+The metrics are divided into are 5 groups:
 
 - Mortality
 - Patient Experience

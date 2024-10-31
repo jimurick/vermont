@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jim Urick">
 
-<title>hi</title>
+<title>Quarto Example</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3098,6 +3098,7 @@ window.MathJax = {
     }
   }
 };</script>
+<style type="text/css">code {color: black;}</style>
 
   <script>/*
  * Polyfill service v3.111.0
@@ -3241,15 +3242,25 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link active" data-scroll-target="#markdown">Markdown</a></li>
+  <li><a href="#latex-with-mathjax" id="toc-latex-with-mathjax" class="nav-link" data-scroll-target="#latex-with-mathjax">LaTeX with MathJax</a></li>
+  <li><a href="#data-manipulation-with-dplyr" id="toc-data-manipulation-with-dplyr" class="nav-link" data-scroll-target="#data-manipulation-with-dplyr">Data Manipulation with <code>dplyr</code></a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">hi</h1>
+<h1 class="title">Quarto Example</h1>
 </div>
 
 
@@ -3272,8 +3283,40 @@ window.Quarto = {
 </header>
 
 
-<section id="one" class="level1">
-<h1>One</h1>
+<section id="markdown" class="level2">
+<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
+<p>Markdown is a markup language.</p>
+</section>
+<section id="latex-with-mathjax" class="level2">
+<h2 class="anchored" data-anchor-id="latex-with-mathjax">LaTeX with MathJax</h2>
+<p><span class="math inline">\(e^x\)</span></p>
+<p>There are symbols you use often enough, like <span class="math inline">\(\mathbb{R}\)</span>, that it makes sense to define a command like <code>\R</code> so you don’t have to keep typing <code>\mathbb{R}</code>.</p>
+<p>In <span class="math inline">\(\LaTeX\)</span>, you could include a command <code>\def\R{\mathbb{R}}</code>. With MathJax, you add an item to the <code>macros</code> list with key <code>&#39;R&#39;</code> and value <code>\\mathbb{R}</code></p>
+<p>You can show work with <code>\begin{align}</code></p>
+<p><span class="math display">\[
+\begin{align*}
+\Gamma(n+1)
+  &amp; =\int_0^\infty x^{n}e^{-x}\,dx \\
+  &amp; =nx^{n-1}e^{-x}\Bigg|_0^\infty+n\int_0^\infty x^{n-1}e^{-x}\,dx \\
+  &amp; =n\cdot\Gamma(n)
+\end{align*}
+\]</span></p>
+<p>You can use <code>pmatrix</code> to create matrices with parentheses. For example, if <span class="math inline">\(f_n\)</span> is the <span class="math inline">\(n^{\textsf{th}}\)</span> Fibonacci number, note that</p>
+<p><span class="math display">\[
+\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}
+\begin{pmatrix} f_{n} \\ f_{n-1} \end{pmatrix}
+=\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
+\]</span></p>
+<p>Let <span class="math inline">\(\phi_{\pm}=\tfrac12(1\pm\sqrt5)\)</span>. Diagonalize the matrix to show that</p>
+<p><span class="math display">\[
+\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
+=\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^n
+\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+=
+\]</span></p>
+</section>
+<section id="data-manipulation-with-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="data-manipulation-with-dplyr">Data Manipulation with <code>dplyr</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
@@ -3283,9 +3326,6 @@ window.Quarto = {
 <pre><code>[1] &quot;hi&quot;</code></pre>
 </div>
 </div>
-<p><span class="math display">\[
-\R
-\]</span></p>
 </section>
 
 </main>
