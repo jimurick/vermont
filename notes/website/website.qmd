@@ -14,8 +14,10 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 ## Files
 
-- `_quarto.yml`
-- `.gitignore`
+The main project folder includes these files:
+
+- `_quarto.yml` - configuration file (see [section below]())
+- `.gitignore` - file used by git
 - `.Rprofile`
 - `index.qmd`
 - `README.qmd`
@@ -28,6 +30,9 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 
 
+## Configuration
+
+
 ## Rendering
 
 ```
@@ -38,8 +43,10 @@ quarto render
 quarto render README.qmd -t md
 ```
 
+## References
 
-
+- [Quarto websites](https://quarto.org/docs/websites/)
+- [W3](https://www.w3schools.com/css/default.asp) can be good for info on HTML & CSS
 
 
 

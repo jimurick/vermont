@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Vermont State Notes",
     "section": "",
-    "text": "I plan to put notes here about\n\nQuarto notebooks\n\nincluding math with mathjax\nplots, some of which are interactive\norganizing notes into a website with github pages\n\nShiny\n\nApp posted here: https://jimurick.shinyapps.io/HospitalStarRatings/\n\nQuarto websites"
+    "text": "The notes here are for 3 examples:\n\nA Quarto notebook\n\nNotebook file: vermont/examples/quarto/quarto_example.qmd\nincluding math with mathjax\nplots, some of which are interactive\norganizing notes into a website with github pages\n\nA Shiny app\n\nApp posted to shinyapps.io: https://jimurick.shinyapps.io/HospitalStarRatings/\nMain R script here: vermont/examples/shiny/app.R\nDepends on my R package hospitalstars\n\nThis Quarto website\n\nConfiguration is in the main vertmont repo folder\nOther pages are under the folder vermont/notes"
   },
   {
     "objectID": "notes/website/website.html",
@@ -53,7 +53,14 @@
     "href": "notes/website/website.html#files",
     "title": "Quarto Website Example",
     "section": "Files",
-    "text": "Files\n\n_quarto.yml\n.gitignore\n.Rprofile\nindex.qmd\nREADME.qmd\njim.ico - I wrote my name with MS Paint, and converted the png file to ico\nscipts/\n\nutil.R includes variables and functions I want to be available everywhere in the project.\nstyle.scss is a SASS file used by this website\nutil.js\nlatex.js includes some javascript code that’s the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)"
+    "text": "Files\nThe main project folder includes these files:\n\n_quarto.yml - configuration file (see section below)\n.gitignore - file used by git\n.Rprofile\nindex.qmd\nREADME.qmd\njim.ico - I wrote my name with MS Paint, and converted the png file to ico\nscipts/\n\nutil.R includes variables and functions I want to be available everywhere in the project.\nstyle.scss is a SASS file used by this website\nutil.js\nlatex.js includes some javascript code that’s the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)"
+  },
+  {
+    "objectID": "notes/website/website.html#configuration",
+    "href": "notes/website/website.html#configuration",
+    "title": "Quarto Website Example",
+    "section": "Configuration",
+    "text": "Configuration"
   },
   {
     "objectID": "notes/website/website.html#rendering",
@@ -61,5 +68,12 @@
     "title": "Quarto Website Example",
     "section": "Rendering",
     "text": "Rendering\nquarto render\nquarto render README.qmd -t md"
+  },
+  {
+    "objectID": "notes/website/website.html#references",
+    "href": "notes/website/website.html#references",
+    "title": "Quarto Website Example",
+    "section": "References",
+    "text": "References\n\nQuarto websites\nW3 can be good for info on HTML & CSS"
   }
 ]

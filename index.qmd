@@ -5,12 +5,18 @@ format: html
 ---
 
 
-I plan to put notes here about
+The notes here are for 3 examples:
 
-- [Quarto notebooks](./notes/quarto/quarto.html)
+- A [Quarto notebook](./notes/quarto/quarto.html)
+    - Notebook file: [`vermont/examples/quarto/quarto_example.qmd`](https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd)
     - including math with mathjax
     - plots, some of which are interactive
     - organizing notes into a website with github pages
-- Shiny
-    - App posted here: <https://jimurick.shinyapps.io/HospitalStarRatings/>
-- Quarto websites
+- A [Shiny app](./notes/shiny/shiny.html)
+    - App posted to shinyapps.io: <https://jimurick.shinyapps.io/HospitalStarRatings/>
+    - Main R script here: [`vermont/examples/shiny/app.R`](https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R)
+    - Depends on my R package [`hospitalstars`](https://github.com/jimurick/hospitalstars)
+- This [Quarto website](./notes/website/website.html)
+    - Configuration is in the main [vertmont repo](https://github.com/jimurick/vermont) folder
+    - Other pages are under the folder [`vermont/notes`](https://github.com/jimurick/vermont/tree/main/notes)
+
