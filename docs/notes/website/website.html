@@ -189,23 +189,61 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="files">Files</h2>
 <p>The main project folder includes these files:</p>
 <ul>
-<li><code>_quarto.yml</code> - configuration file (see <a href="">section below</a>)</li>
-<li><code>.gitignore</code> - file used by git</li>
-<li><code>.Rprofile</code></li>
-<li><code>index.qmd</code></li>
-<li><code>README.qmd</code></li>
-<li><code>jim.ico</code> - I wrote my name with MS Paint, and converted the png file to ico</li>
+<li><code>_quarto.yml</code> - configuration file (see <a href="#configuration">Configuration</a> below)</li>
+<li><code>index.qmd</code> - Quarto notebook that is the main page of the website</li>
+<li><code>README.qmd</code> - Quarto notebook rendered to <code>README.md</code> by running the command <code>quarto render README.qmd -t md</code> in the RStudio Terminal</li>
+<li><code>jim.ico</code> - I wrote my name with MS Paint and converted the PNG file to ICO</li>
 <li><code>scipts/</code>
 <ul>
-<li><code>util.R</code> includes variables and functions I want to be available everywhere in the project.</li>
-<li><code>style.scss</code> is a SASS file used by this website</li>
-<li><code>util.js</code></li>
-<li><code>latex.js</code> includes some javascript code that’s the mathjax analog of <span class="math inline">\(\LaTeX\)</span> def/newcommand type commands (see the <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">mathjax docs</a>)</li>
+<li><code>util.R</code> - Variables and functions that may be needed in various places</li>
+<li><code>style.scss</code> - A Sass file used to create some CSS for the website</li>
+<li><code>util.js</code> - One javascript function that’s used when you click the button on the map’s popups</li>
+<li><code>latex.js</code> - Some javascript that does the mathjax analog of <span class="math inline">\(\LaTeX\)</span> def/newcommand type commands (see the <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">mathjax docs</a>)</li>
 </ul></li>
+<li><code>.gitignore</code> - used by git to specify filename patterns to exclude from the repo</li>
+<li><code>.Rprofile</code> - run when the project is opened; it defines some functions I want to be generally available</li>
 </ul>
 </section>
 <section id="configuration" class="level2">
 <h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
+<p>The top of <code>_quarto.yml</code> describes the type of project, where the final website should go (<a href="https://github.com/jimurick/vermont/blob/main/docs">notes folder</a>), and which Quarto notebook files need to be rendered to HTML.</p>
+<pre><code>project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - notes/quarto/quarto.qmd
+    - notes/shiny/shiny.qmd
+    - notes/website/website.qmd</code></pre>
+<p>The next part</p>
+<pre><code>website:
+  title: "Vermont State Notes"
+  favicon: jim.ico
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: notes/quarto/quarto.qmd
+        text: Quarto
+      - href: notes/shiny/shiny.qmd
+        text: Shiny
+      - href: notes/website/website.qmd
+        text: Website
+    tools:
+      - icon: github
+        href: https://github.com/jimurick/vermont</code></pre>
+<p>This is similar to the <a href="https://jimurick.github.io/vermont/notes/quarto/quarto.html#header">Header</a> section of the</p>
+<pre><code>format:
+  html:
+    theme: scripts/styles.scss
+    css: scripts/styles.scss
+    toc: true
+    monofont: Fira Code
+    html-math-method: mathjax
+    include-in-header:
+      - text: &lt;link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet"&gt;
+      - text: &lt;script type="text/javascript" src="/scripts/util.js"&gt;&lt;/script&gt;
+      - text: &lt;script type="text/javascript" src="/scripts/latex.js"&gt;&lt;/script&gt;</code></pre>
 </section>
 <section id="rendering" class="level2">
 <h2 class="anchored" data-anchor-id="rendering">Rendering</h2>

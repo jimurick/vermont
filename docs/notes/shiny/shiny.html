@@ -126,8 +126,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#files" id="toc-files" class="nav-link active" data-scroll-target="#files">Files</a></li>
-  <li><a href="#dependency-r-package-hospitalstars" id="toc-dependency-r-package-hospitalstars" class="nav-link" data-scroll-target="#dependency-r-package-hospitalstars">Dependency: R Package <code>hospitalstars</code></a></li>
   <li><a href="#app" id="toc-app" class="nav-link" data-scroll-target="#app">App</a></li>
+  <li><a href="#dependency-r-package-hospitalstars" id="toc-dependency-r-package-hospitalstars" class="nav-link" data-scroll-target="#dependency-r-package-hospitalstars">Dependency: R Package <code>hospitalstars</code></a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -154,10 +154,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section will describe the example in the repo’s <a href="https://github.com/jimurick/vermont/blob/main/examples/shiny">examples folder</a>.</p>
-<p>The app is posted on shinyapps.io: <a href="https://jimurick.shinyapps.io/HospitalStarRatings/" class="uri">https://jimurick.shinyapps.io/HospitalStarRatings/</a></p>
+<p>This page describes this app posted to <a href="https://www.shinyapps.io/">shinyapps.io</a>:</p>
+<p>  <a href="https://jimurick.shinyapps.io/HospitalStarRatings/" class="uri">https://jimurick.shinyapps.io/HospitalStarRatings/</a></p>
+<p>The code is in the repo folder <a href="https://github.com/jimurick/vermont/blob/main/examples/shiny">examples folder</a>.</p>
 <section id="files" class="level2">
 <h2 class="anchored" data-anchor-id="files">Files</h2>
+<p>Here are the files that make up the app:</p>
 <ul>
 <li><code>app.R</code> - the main Shiny app file (see <a href="#app">App</a> below)</li>
 <li><code>util.R</code> - contains 1 function that is used a few times in <code>app.R</code></li>
@@ -170,31 +172,40 @@ ul.task-list li input[type="checkbox"] {
 <li><code>About.qmd</code> - I render this to the markdown file <code>About.md</code> with the RStudio Terminal command <code>quarto render examples/shiny/About.qmd -t md</code>. Then include the markdown in the last tab of <code>app.R</code>.</li>
 </ul>
 </section>
-<section id="dependency-r-package-hospitalstars" class="level2">
-<h2 class="anchored" data-anchor-id="dependency-r-package-hospitalstars">Dependency: R Package <code>hospitalstars</code></h2>
-<p>This shiny app uses an R package I <a href="https://github.com/jimurick/hospitalstars">hospitalstars</a></p>
-<p>It may be interesting because</p>
-<ul>
-<li>Most data manipulation is done with the package <code>data.table</code>, because it’s much faster than <code>dplyr</code>.</li>
-<li>There is a C++ implementation of the <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> algorithm. It was taken from the <code>amap</code> package (<a href="https://github.com/cran/amap/blob/master/src/kmeans.cpp">here</a>) and modified to add a parameter from the SAS implementation (<a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm"><code>FASTCLUS</code></a>).</li>
-</ul>
-</section>
 <section id="app" class="level2">
 <h2 class="anchored" data-anchor-id="app">App</h2>
+<p>Shiny apps have two main parts:</p>
+<ol type="1">
+<li>The user interface (typically using the variable <code>ui</code>) defines the layout and the widgets included in the app.</li>
+<li>The server (typically a function named <code>server</code>) determines the interactions connecting the widgets.</li>
+</ol>
+<p>There are a lot of basic widgets that come with the <code>shiny</code> package (<a href="https://shiny.posit.co/r/gallery/widgets/widget-gallery/">widget gallery</a>). There are also a lot of free packages that were created with the <code>htmlwidgets</code> package (<a href="https://gallery.htmlwidgets.org/">htmlwidgets gallery</a>). Many of those were developed for javascript widgets, and <code>htmlwidgets</code> allowed people to create R wrappers for them.</p>
+<p>Widgets can be grouped into two categories: input widgets take data from users, and output widgets display data to users. There are also intermediate (between input &amp; output) objects, like the dataframes in the app created by the <code>reactive()</code> function. See <a href="https://mastering-shiny.org/basic-reactivity.html">Basic reactivity</a> from Mastering Shiny for more.</p>
+</section>
+<section id="dependency-r-package-hospitalstars" class="level2">
+<h2 class="anchored" data-anchor-id="dependency-r-package-hospitalstars">Dependency: R Package <code>hospitalstars</code></h2>
+<p>This shiny app uses an R package I made for a previous job called <a href="https://github.com/jimurick/hospitalstars"><code>hospitalstars</code></a>. See the app’s About tab for information about it.</p>
+<p>The package may be interesting because</p>
+<ul>
+<li>There is a C++ implementation of the <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> algorithm. It was taken from the <code>amap</code> package (<a href="https://github.com/cran/amap/blob/master/src/kmeans.cpp">here</a>) and modified to add a parameter that’s in the SAS k-means function <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm"><code>FASTCLUS</code></a>.</li>
+<li>Most data manipulation is done with the package <code>data.table</code>, because it’s much faster than <code>dplyr</code>.</li>
+</ul>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
 <li>Books
 <ul>
-<li><a href="https://mastering-shiny.org/">Mastering Shiny</a></li>
-<li><a href="https://unleash-shiny.rinterface.com/">Outstanding User Interfaces with Shiny</a></li>
+<li><a href="https://mastering-shiny.org/">Mastering Shiny</a> is where you should start to learn shiny</li>
+<li><a href="https://unleash-shiny.rinterface.com/">Outstanding User Interfaces with Shiny</a> has more advanced info about using HTML/CSS/Javascript</li>
 <li><a href="https://r-pkgs.org/">R Packages</a></li>
 </ul></li>
 <li>Links
 <ul>
-<li><a href="https://gallery.htmlwidgets.org/">htmlwidgets Gallery</a></li>
-<li><a href="https://rstudio.github.io/bslib/">bslib</a></li>
+<li><a href="https://shiny.posit.co/r/gallery/widgets/widget-gallery/">Widget Gallery</a></li>
+<li><a href="https://gallery.htmlwidgets.org/"><code>htmlwidgets</code> Gallery</a></li>
+<li><a href="https://rstudio.github.io/bslib/">bslib</a> makes it easier to use CSS/Sass and <a href="https://themes.getbootstrap.com/">bootstrap themes</a> in your apps</li>
+<li><a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html"><code>data.table</code></a> defines the <code>data.table</code> class, which is very good for processing bigger tables :::</li>
 </ul></li>
 </ul>
 

@@ -5,7 +5,7 @@ library(leaflet)       # for the map
 library(plotly)        # for the plot
 library(markdown)      # for the "About" tab
 
-source("util.R")       # one extra function
+source("util.R")       # one extra function: `select_input_to_inline`
 
 # Default ggplot plots to the black & white theme
 theme_set(theme_bw())
@@ -51,7 +51,7 @@ ui <-
       tags$head(tags$script(type="text/javascript", src="util.js")),
       selectInput("state", "Choose a State",
                   choices = state_choices, selected = "VT") |>
-        select_input_to_inline(12, 10),
+        select_input_to_inline(label_width = 12, select_width = 10),
       div(style = "height: 1rem;"), # put some space before the map
       leafletOutput("map"),
     ),
@@ -59,9 +59,9 @@ ui <-
       title = "Plot",
       tags$h3("Hospital Scores vs Overall 5-number Summaries"),
       selectizeInput("provider_id", "Choose a Hospital", choices = NULL) |>
-        select_input_to_inline(15, 40),
+        select_input_to_inline(label_width = 15, select_width = 40),
       selectizeInput("measure_id", "Choose a Measure", choices = measure_choices) |>
-        select_input_to_inline(15, 40),
+        select_input_to_inline(label_width = 15, select_width = 40),
       div(style = "height: 1rem;"), # put some space before the plot
       plotlyOutput("plot")
     ),

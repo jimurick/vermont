@@ -18,35 +18,35 @@
     "href": "notes/shiny/shiny.html",
     "title": "Shiny App Example",
     "section": "",
-    "text": "This section will describe the example in the repo’s examples folder.\nThe app is posted on shinyapps.io: https://jimurick.shinyapps.io/HospitalStarRatings/"
+    "text": "This page describes this app posted to shinyapps.io:\nhttps://jimurick.shinyapps.io/HospitalStarRatings/\nThe code is in the repo folder examples folder."
   },
   {
     "objectID": "notes/shiny/shiny.html#files",
     "href": "notes/shiny/shiny.html#files",
     "title": "Shiny App Example",
     "section": "Files",
-    "text": "Files\n\napp.R - the main Shiny app file (see App below)\nutil.R - contains 1 function that is used a few times in app.R\nwww\n\nhospital_df.Rda - an R data file that contains the hospital_df dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.\nutil.js - a javascript file with one function that’s called when you click the “View Data” button on a hospital’s popup\nabout.css - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.\n\nAbout.qmd - I render this to the markdown file About.md with the RStudio Terminal command quarto render examples/shiny/About.qmd -t md. Then include the markdown in the last tab of app.R."
-  },
-  {
-    "objectID": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
-    "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
-    "title": "Shiny App Example",
-    "section": "Dependency: R Package hospitalstars",
-    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I hospitalstars\nIt may be interesting because\n\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr.\nThere is a C++ implementation of the k-means clustering algorithm. It was taken from the amap package (here) and modified to add a parameter from the SAS implementation (FASTCLUS)."
+    "text": "Files\nHere are the files that make up the app:\n\napp.R - the main Shiny app file (see App below)\nutil.R - contains 1 function that is used a few times in app.R\nwww\n\nhospital_df.Rda - an R data file that contains the hospital_df dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.\nutil.js - a javascript file with one function that’s called when you click the “View Data” button on a hospital’s popup\nabout.css - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.\n\nAbout.qmd - I render this to the markdown file About.md with the RStudio Terminal command quarto render examples/shiny/About.qmd -t md. Then include the markdown in the last tab of app.R."
   },
   {
     "objectID": "notes/shiny/shiny.html#app",
     "href": "notes/shiny/shiny.html#app",
     "title": "Shiny App Example",
     "section": "App",
-    "text": "App"
+    "text": "App\nShiny apps have two main parts:\n\nThe user interface (typically using the variable ui) defines the layout and the widgets included in the app.\nThe server (typically a function named server) determines the interactions connecting the widgets.\n\nThere are a lot of basic widgets that come with the shiny package (widget gallery). There are also a lot of free packages that were created with the htmlwidgets package (htmlwidgets gallery). Many of those were developed for javascript widgets, and htmlwidgets allowed people to create R wrappers for them.\nWidgets can be grouped into two categories: input widgets take data from users, and output widgets display data to users. There are also intermediate (between input & output) objects, like the dataframes in the app created by the reactive() function. See Basic reactivity from Mastering Shiny for more."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "title": "Shiny App Example",
+    "section": "Dependency: R Package hospitalstars",
+    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I made for a previous job called hospitalstars. See the app’s About tab for information about it.\nThe package may be interesting because\n\nThere is a C++ implementation of the k-means clustering algorithm. It was taken from the amap package (here) and modified to add a parameter that’s in the SAS k-means function FASTCLUS.\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr."
   },
   {
     "objectID": "notes/shiny/shiny.html#references",
     "href": "notes/shiny/shiny.html#references",
     "title": "Shiny App Example",
     "section": "References",
-    "text": "References\n\nBooks\n\nMastering Shiny\nOutstanding User Interfaces with Shiny\nR Packages\n\nLinks\n\nhtmlwidgets Gallery\nbslib"
+    "text": "References\n\nBooks\n\nMastering Shiny is where you should start to learn shiny\nOutstanding User Interfaces with Shiny has more advanced info about using HTML/CSS/Javascript\nR Packages\n\nLinks\n\nWidget Gallery\nhtmlwidgets Gallery\nbslib makes it easier to use CSS/Sass and bootstrap themes in your apps\ndata.table defines the data.table class, which is very good for processing bigger tables :::"
   },
   {
     "objectID": "index.html",
@@ -67,14 +67,14 @@
     "href": "notes/website/website.html#files",
     "title": "Quarto Website Example",
     "section": "Files",
-    "text": "Files\nThe main project folder includes these files:\n\n_quarto.yml - configuration file (see section below)\n.gitignore - file used by git\n.Rprofile\nindex.qmd\nREADME.qmd\njim.ico - I wrote my name with MS Paint, and converted the png file to ico\nscipts/\n\nutil.R includes variables and functions I want to be available everywhere in the project.\nstyle.scss is a SASS file used by this website\nutil.js\nlatex.js includes some javascript code that’s the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)"
+    "text": "Files\nThe main project folder includes these files:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md by running the command quarto render README.qmd -t md in the RStudio Terminal\njim.ico - I wrote my name with MS Paint and converted the PNG file to ICO\nscipts/\n\nutil.R - Variables and functions that may be needed in various places\nstyle.scss - A Sass file used to create some CSS for the website\nutil.js - One javascript function that’s used when you click the button on the map’s popups\nlatex.js - Some javascript that does the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available"
   },
   {
     "objectID": "notes/website/website.html#configuration",
     "href": "notes/website/website.html#configuration",
     "title": "Quarto Website Example",
     "section": "Configuration",
-    "text": "Configuration"
+    "text": "Configuration\nThe top of _quarto.yml describes the type of project, where the final website should go (notes folder), and which Quarto notebook files need to be rendered to HTML.\nproject:\n  type: website\n  output-dir: docs\n  render:\n    - index.qmd\n    - notes/quarto/quarto.qmd\n    - notes/shiny/shiny.qmd\n    - notes/website/website.qmd\nThe next part\nwebsite:\n  title: \"Vermont State Notes\"\n  favicon: jim.ico\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: notes/quarto/quarto.qmd\n        text: Quarto\n      - href: notes/shiny/shiny.qmd\n        text: Shiny\n      - href: notes/website/website.qmd\n        text: Website\n    tools:\n      - icon: github\n        href: https://github.com/jimurick/vermont\nThis is similar to the Header section of the\nformat:\n  html:\n    theme: scripts/styles.scss\n    css: scripts/styles.scss\n    toc: true\n    monofont: Fira Code\n    html-math-method: mathjax\n    include-in-header:\n      - text: &lt;link href=\"https://fonts.googleapis.com/css?family=Fira+Code\" rel=\"stylesheet\"&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/util.js\"&gt;&lt;/script&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/latex.js\"&gt;&lt;/script&gt;"
   },
   {
     "objectID": "notes/website/website.html#rendering",

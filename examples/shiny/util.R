@@ -1,11 +1,11 @@
 
-
+# 
 # https://unleash-shiny.rinterface.com/htmltools-overview#htmltools-modern
 
-select_input_to_inline <- function(select_input, width1, width2) {
-  wd <- sprintf("%drem", width1 + width2)
-  wl <- sprintf("%drem", width1)
-  ws <- sprintf("%drem", width2)
+select_input_to_inline <- function(select_input, label_width, select_width) {
+  wd <- sprintf("%drem", label_width + select_width)
+  wl <- sprintf("%drem", label_width)
+  ws <- sprintf("%drem", select_width)
   # There are 3 HTML elements that I want to add a style attribute to: a <div>,
   # a <label> and a <select>. 
   div_style <- stringr::str_interp("display: table-row; width: ${wd};")

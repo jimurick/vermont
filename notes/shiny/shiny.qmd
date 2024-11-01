@@ -8,41 +8,53 @@ format: html
 #| include: false
 ```
 
-This section will describe the example in the repo's `{r} repo_link("examples folder", "examples/shiny")`.
 
-The app is posted on shinyapps.io: <https://jimurick.shinyapps.io/HospitalStarRatings/>
+This page describes this app posted to [shinyapps.io](https://www.shinyapps.io/):
+
+  <https://jimurick.shinyapps.io/HospitalStarRatings/>
+
+The code is in the repo folder `{r} repo_link("examples folder", "examples/shiny")`.
 
 ## Files
 
-- `app.R` - the main Shiny app file (see [App](#app) below)
-- `util.R` - contains 1 function that is used a few times in `app.R`
-- `www`
-  - `hospital_df.Rda` - an R data file that contains the `hospital_df` dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.
-  - `util.js` - a javascript file with one function that's called when you click the "View Data" button on a hospital's popup
-  - `about.css` - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.
-- `About.qmd` - I render this to the markdown file `About.md` with the RStudio Terminal command `quarto render examples/shiny/About.qmd -t md`. Then include the markdown in the last tab of `app.R`.
+Here are the files that make up the app:
+
+-   `app.R` - the main Shiny app file (see [App](#app) below)
+-   `util.R` - contains 1 function that is used a few times in `app.R`
+-   `www`
+    -   `hospital_df.Rda` - an R data file that contains the `hospital_df` dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.
+    -   `util.js` - a javascript file with one function that's called when you click the "View Data" button on a hospital's popup
+    -   `about.css` - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.
+-   `About.qmd` - I render this to the markdown file `About.md` with the RStudio Terminal command `quarto render examples/shiny/About.qmd -t md`. Then include the markdown in the last tab of `app.R`.
+
+## App {#app}
+
+Shiny apps have two main parts:
+
+1.  The user interface (typically using the variable `ui`) defines the layout and the widgets included in the app.
+2.  The server (typically a function named `server`) determines the interactions connecting the widgets.
+
+There are a lot of basic widgets that come with the `shiny` package ([widget gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)). There are also a lot of free packages that were created with the `htmlwidgets` package ([htmlwidgets gallery](https://gallery.htmlwidgets.org/)). Many of those were developed for javascript widgets, and `htmlwidgets` allowed people to create R wrappers for them.
+
+Widgets can be grouped into two categories: input widgets take data from users, and output widgets display data to users. There are also intermediate (between input & output) objects, like the dataframes in the app created by the `reactive()` function. See [Basic reactivity](https://mastering-shiny.org/basic-reactivity.html) from Mastering Shiny for more.
 
 ## Dependency: R Package `hospitalstars`
 
-This shiny app uses an R package I 
-[hospitalstars](https://github.com/jimurick/hospitalstars)
+This shiny app uses an R package I made for a previous job called [`hospitalstars`](https://github.com/jimurick/hospitalstars). See the app's About tab for information about it.
 
-It may be interesting because
+The package may be interesting because
 
-- Most data manipulation is done with the package `data.table`, because it's much faster than `dplyr`.
-- There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. It was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter from the SAS implementation ([`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm)).
-
-## App
-
-
-
+-   There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. It was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter that's in the SAS k-means function [`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm).
+-   Most data manipulation is done with the package `data.table`, because it's much faster than `dplyr`.
 
 ## References
 
-- Books
-  - [Mastering Shiny](https://mastering-shiny.org/)
-  - [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/)
-  - [R Packages](https://r-pkgs.org/)
-- Links
-  - [htmlwidgets Gallery](https://gallery.htmlwidgets.org/)
-  - [bslib](https://rstudio.github.io/bslib/)
+-   Books
+    -   [Mastering Shiny](https://mastering-shiny.org/) is where you should start to learn shiny
+    -   [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/) has more advanced info about using HTML/CSS/Javascript
+    -   [R Packages](https://r-pkgs.org/)
+-   Links
+    -   [Widget Gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+    -   [`htmlwidgets` Gallery](https://gallery.htmlwidgets.org/)
+    -   [bslib](https://rstudio.github.io/bslib/) makes it easier to use CSS/Sass and [bootstrap themes](https://themes.getbootstrap.com/) in your apps
+    -   [`data.table`](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) defines the `data.table` class, which is very good for processing bigger tables :::

@@ -9,7 +9,6 @@ project:
 
 website:
   title: "Vermont State Notes"
-  # I made this with paint and converted png->ico
   favicon: jim.ico
   navbar:
     left:

@@ -16,22 +16,69 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 The main project folder includes these files:
 
-- `_quarto.yml` - configuration file (see [section below]())
-- `.gitignore` - file used by git
-- `.Rprofile`
-- `index.qmd`
-- `README.qmd`
-- `jim.ico` - I wrote my name with MS Paint, and converted the png file to ico
+- `_quarto.yml` - configuration file (see [Configuration](#configuration) below)
+- `index.qmd` - Quarto notebook that is the main page of the website
+- `README.qmd` - Quarto notebook rendered to `README.md` by running the command `quarto render README.qmd -t md` in the RStudio Terminal
+- `jim.ico` - I wrote my name with MS Paint and converted the PNG file to ICO
 - `scipts/`
-    - `util.R` includes variables and functions I want to be available everywhere in the project.
-    - `style.scss` is a SASS file used by this website
-    - `util.js`
-    - `latex.js` includes some javascript code that's the mathjax analog of $\LaTeX$ def/newcommand type commands (see the [mathjax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
-
-
+    - `util.R` - Variables and functions that may be needed in various places
+    - `style.scss` - A Sass file used to create some CSS for the website
+    - `util.js` - One javascript function that's used when you click the button on the map's popups
+    - `latex.js` - Some javascript that does the mathjax analog of $\LaTeX$ def/newcommand type commands (see the [mathjax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
+- `.gitignore` - used by git to specify filename patterns to exclude from the repo
+- `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
 
 ## Configuration
 
+The top of `_quarto.yml` describes the type of project, where the final website should go (`{r} repo_link("notes folder", "docs")`), and which Quarto notebook files need to be rendered to HTML.
+
+```
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - notes/quarto/quarto.qmd
+    - notes/shiny/shiny.qmd
+    - notes/website/website.qmd
+```
+
+The next part 
+
+```
+website:
+  title: "Vermont State Notes"
+  favicon: jim.ico
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: notes/quarto/quarto.qmd
+        text: Quarto
+      - href: notes/shiny/shiny.qmd
+        text: Shiny
+      - href: notes/website/website.qmd
+        text: Website
+    tools:
+      - icon: github
+        href: https://github.com/jimurick/vermont
+```
+
+This is similar to the [Header](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) section of the 
+
+```
+format:
+  html:
+    theme: scripts/styles.scss
+    css: scripts/styles.scss
+    toc: true
+    monofont: Fira Code
+    html-math-method: mathjax
+    include-in-header:
+      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
+      - text: <script type="text/javascript" src="/scripts/util.js"></script>
+      - text: <script type="text/javascript" src="/scripts/latex.js"></script>
+```
 
 ## Rendering
 
