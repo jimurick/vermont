@@ -21,11 +21,25 @@
     "text": "This section will describe the example in the repo’s examples folder.\nThe app is posted on shinyapps.io: https://jimurick.shinyapps.io/HospitalStarRatings/"
   },
   {
-    "objectID": "notes/shiny/shiny.html#my-r-package-hospitalstars",
-    "href": "notes/shiny/shiny.html#my-r-package-hospitalstars",
+    "objectID": "notes/shiny/shiny.html#files",
+    "href": "notes/shiny/shiny.html#files",
     "title": "Shiny App Example",
-    "section": "My R Package: hospitalstars",
-    "text": "My R Package: hospitalstars\nThis shiny app uses an R package I hospitalstars\nIt may be interesting because\n\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr.\nThere is a C++ implementation of the k-means clustering algorithm. It was taken from the amap package (here) and modified to add a parameter from the SAS implementation (FASTCLUS)."
+    "section": "Files",
+    "text": "Files\n\napp.R - the main Shiny app file (see App below)\nutil.R - contains 1 function that is used a few times in app.R\nwww\n\nhospital_df.Rda - an R data file that contains the hospital_df dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.\nutil.js - a javascript file with one function that’s called when you click the “View Data” button on a hospital’s popup\nabout.css - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.\n\nAbout.qmd - I render this to the markdown file About.md with the RStudio Terminal command quarto render examples/shiny/About.qmd -t md. Then include the markdown in the last tab of app.R."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "title": "Shiny App Example",
+    "section": "Dependency: R Package hospitalstars",
+    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I hospitalstars\nIt may be interesting because\n\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr.\nThere is a C++ implementation of the k-means clustering algorithm. It was taken from the amap package (here) and modified to add a parameter from the SAS implementation (FASTCLUS)."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#app",
+    "href": "notes/shiny/shiny.html#app",
+    "title": "Shiny App Example",
+    "section": "App",
+    "text": "App"
   },
   {
     "objectID": "notes/shiny/shiny.html#references",
