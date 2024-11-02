@@ -156,7 +156,7 @@ window.Quarto = {
   <ul>
   <li><a href="#files" id="toc-files" class="nav-link active" data-scroll-target="#files">Files</a></li>
   <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a></li>
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
+  <li><a href="#updating" id="toc-updating" class="nav-link" data-scroll-target="#updating">Updating</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -185,23 +185,29 @@ window.Quarto = {
 
 <p>This section will describe the example in the main repo folder and the <a href="https://github.com/jimurick/vermont/blob/main/notes">notes folder</a>.</p>
 <p><a href="https://quarto.org/docs/websites/">Quarto websites</a></p>
+<p>Most of the focus here is on the configuration, because</p>
 <section id="files" class="level2">
 <h2 class="anchored" data-anchor-id="files">Files</h2>
-<p>The main project folder includes these files:</p>
+<p>These are the main files in the root project folder that organize the website:</p>
 <ul>
 <li><code>_quarto.yml</code> - configuration file (see <a href="#configuration">Configuration</a> below)</li>
 <li><code>index.qmd</code> - Quarto notebook that is the main page of the website</li>
-<li><code>README.qmd</code> - Quarto notebook rendered to <code>README.md</code> by running the command <code>quarto render README.qmd -t md</code> in the RStudio Terminal</li>
-<li><code>jim.ico</code> - I wrote my name with MS Paint and converted the PNG file to ICO</li>
+<li><code>README.qmd</code> - Quarto notebook rendered to <code>README.md</code> (see <a href="#updating">Updating</a> below)</li>
+<li><code>jim.ico</code> - the icon shown in browser tabs (I wrote my name with MS Paint and converted the PNG file to ICO)</li>
 <li><code>scipts/</code>
 <ul>
-<li><code>util.R</code> - Variables and functions that may be needed in various places</li>
-<li><code>style.scss</code> - A Sass file used to create some CSS for the website</li>
-<li><code>util.js</code> - One javascript function that’s used when you click the button on the map’s popups</li>
-<li><code>latex.js</code> - Some javascript that does the mathjax analog of <span class="math inline">\(\LaTeX\)</span> def/newcommand type commands (see the <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">mathjax docs</a>)</li>
+<li><code>util.R</code> - variables and functions that may be needed in various places</li>
+<li><code>style.scss</code> - a Sass file used to create some CSS for the website</li>
+<li><code>util.js</code> - one javascript function that’s used when you click the button on the map’s popups</li>
+<li><code>latex.js</code> - some javascript that does the MathJax analog of <span class="math inline">\(\LaTeX\)</span> def/newcommand type commands (see the <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">MathJax docs</a>)</li>
 </ul></li>
 <li><code>.gitignore</code> - used by git to specify filename patterns to exclude from the repo</li>
 <li><code>.Rprofile</code> - run when the project is opened; it defines some functions I want to be generally available</li>
+</ul>
+<p>The other website files are in these folders:</p>
+<ul>
+<li><code>notes/</code> has the Quarto notebooks that are rendered to HTML</li>
+<li><code>docs/</code> has all the rendered HTML/CSS/etc files that make up the site</li>
 </ul>
 </section>
 <section id="configuration" class="level2">
@@ -215,7 +221,7 @@ window.Quarto = {
     - notes/quarto/quarto.qmd
     - notes/shiny/shiny.qmd
     - notes/website/website.qmd</code></pre>
-<p>The next part</p>
+<p>The next part determines the title/icon that appear on a browser tab, and the menus that are on the top navigation bar.</p>
 <pre><code>website:
   title: "Vermont State Notes"
   favicon: jim.ico
@@ -232,7 +238,7 @@ window.Quarto = {
     tools:
       - icon: github
         href: https://github.com/jimurick/vermont</code></pre>
-<p>This is similar to the <a href="https://jimurick.github.io/vermont/notes/quarto/quarto.html#header">Header</a> section of the</p>
+<p>The last part is similar to the <a href="https://jimurick.github.io/vermont/notes/quarto/quarto.html#header">Header</a> section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.</p>
 <pre><code>format:
   html:
     theme: scripts/styles.scss
@@ -241,14 +247,20 @@ window.Quarto = {
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
-      - text: &lt;link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet"&gt;
+      - text: &lt;link href="https://fonts.googleapis.com/css?family=Fira+Code"
+                    rel="stylesheet"&gt;
       - text: &lt;script type="text/javascript" src="/scripts/util.js"&gt;&lt;/script&gt;
       - text: &lt;script type="text/javascript" src="/scripts/latex.js"&gt;&lt;/script&gt;</code></pre>
 </section>
-<section id="rendering" class="level2">
-<h2 class="anchored" data-anchor-id="rendering">Rendering</h2>
-<pre><code>quarto render</code></pre>
+<section id="updating" class="level2">
+<h2 class="anchored" data-anchor-id="updating">Updating</h2>
+<p>To update the website, I first render the README - but only if <code>README.qmd</code> was changed.</p>
 <pre><code>quarto render README.qmd -t md</code></pre>
+<p>Then render the rest of the pages of the website.</p>
+<pre><code>quarto render</code></pre>
+<p>To update the site, I add all changes to the git repo</p>
+<pre><code>git add --all</code></pre>
+<p>and then commit the changes in RStudio and push the changes to github.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

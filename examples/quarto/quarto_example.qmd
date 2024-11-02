@@ -13,20 +13,59 @@ format:
 ---
 
 
-## Markdown
+## Markdown, R Markdown, Quarto
 
-Markdown is a markup language.
+Markdown is a markup language. Find a cheat sheet [like this one](https://www.markdownguide.org/cheat-sheet/) to learn the syntax for things like
+
+- lists
+- **bold**, *italics* (also with _underscores_), `code`, ~~strikethrough~~
+- Images: ![This is the caption](../../jim.ico){width=20px}
+
+You can render notebooks (with the "Render" button) to a variety of formats, like PDF, HTML, slides or plain Markdown. The header here is set up to render to a standalone HTML file. 
+
+[R Markdown](https://rmarkdown.rstudio.com/) adds some more functionality to plain Markdown, like code chunks
+
+```{r}
+x <- rnorm(10000)
+hist(x, 50)
+```
+
+and inline R code: sin(1)=`{r} sin(1)`. You can create a new code chunk with Ctrl-Shift-I on a blank line.
+
+[Quarto](https://quarto.org/) is a newer version of R Markdown made by [Posit](https://posit.co/) (formerly named RStudio). Older notebook files may have an ".rmd" extension for R Markdown, while newer ".qmd" files are Quarto.
+
+Quarto adds some fancier things like [tabset panels](https://quarto.org/docs/interactive/layout.html#tabset-panel):
+
+:::{.panel-tabset}
+
+## Normal Distribution
+
+```{r}
+x <- rnorm(10000)
+hist(x, 50, main = "Normal")
+```
+
+## $\Gamma$ Distribution
+
+```{r}
+x <- rgamma(10000, shape = 2)
+hist(x, 50, main = "Gamma")
+```
+
+:::
 
 
 ## LaTeX with MathJax
 
-$e^x$
+MathJax is a Javascript engine that renders $\LaTeX$ in R Markdown. It doesn't do everything that $\LaTeX$ does, but it does enough for most purposes. Find some cheat sheets like [this one](https://quickref.me/latex.html) or [this one](https://wch.github.io/latexsheet/latexsheet.pdf) to learn how to do basics.
 
-There are symbols you use often enough, like $\mathbb{R}$, that it makes sense to define a command like `\R` so you don't have to keep typing `\mathbb{R}`.
+You can include inline math with a single `$`, like $e^{\pi i}$, or you can use `$$` for "display" math:
 
-In $\LaTeX$, you could include a command `\def\R{\mathbb{R}}`. With MathJax, you add an item with key `'R'` and value `'\\mathbb{R}'` to the `macros` list in a javascript file like "latex.js" in this folder. Then include that javascript file in the Quarto notebook's YAML header.
+$$
+\frac{d}{dx}\int_{a}^{x}f(t)\,dt=f(x)
+$$
 
-You can show work with `\begin{align}`
+You can show multiple lines of work with the `align` environment.
 
 $$
 \begin{align*}
@@ -37,36 +76,99 @@ $$
 \end{align*}
 $$
 
-You can use `pmatrix` to create matrices with parentheses. For example, if $f_n$ is the $n^{\textsf{th}}$ Fibonacci number, note that
+Use `pmatrix` to create matrices with parentheses. For example, if $f_n$ is the $n^{\textsf{th}}$ Fibonacci number, note that
 
 $$
-\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
 \begin{pmatrix} f_{n} \\ f_{n-1} \end{pmatrix}
-=\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
+=\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}.
 $$
 
-Let $\phi_{\pm}=\tfrac12(1\pm\sqrt5)$. Diagonalize the matrix to show that
+Let $\phi_{\pm}=\tfrac12(1\pm\sqrt5)$ and diagonalize that matrix to show that
 
 $$
+\begin{align*}
 \begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
-=\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}^n
+& =\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
+  \begin{pmatrix} 1 \\ 1 \end{pmatrix} \\
+& =\frac{1}{\sqrt{5}}
+\begin{pmatrix} 1 & -\phi_- \\ -1 & \phi_+ \end{pmatrix}
+\begin{pmatrix} \phi_+ & 0 \\ 0 & \phi_- \end{pmatrix}^n
+\begin{pmatrix} \phi_+ & \phi_- \\ 1 & 1 \end{pmatrix}
 \begin{pmatrix} 1 \\ 1 \end{pmatrix}
-=
+\end{align*}
 $$
 
+## Macros
+
+You can also use some $\TeX$ macros like `\def\eps{\varepsilon}` in case you want a shortcut for $\varepsilon$ but don't want to overwrite `\epsilon`=$\epsilon$. That can be a little odd in a notebook because that code doesn't render to anything: $\def\eps{\varepsilon}$.
+
+It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see the [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header)). That file is described in the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html). I used it to define `\R`=$\R$ to be `\mathbb{R}`.
 
 
-## Data Manipulation with `dplyr`
+## Two `tidyverse` Packages
+
+If you're interested in working with data in R, it's a good idea to read Hadley Wickham's [R for Data Science](https://r4ds.hadley.nz/). The metapackage `tidyverse` includes most of the packages described there.
+
+```{r, output=FALSE}
+library(tidyverse)
+```
+
+Two of the main packages are
+
+- [`ggplot2`](https://ggplot2-book.org/), based on the book The Grammar of Graphics, and
+- [`dplyr`](https://dplyr.tidyverse.org/), "a grammar for data manipulation".
+
+To get practice, it can help to know that R loads some dataset like `mtcars` from the `datasets` package.
+
+```{r}
+head(mtcars)
+```
+
+You should also get used to the [pipe operator](https://ggplot2-book.org/) `|>`. It's two characters, a vertical line `|` and greater than `>`, but the Fira Code font combines them into something like $\LaTeX$'s `\triangleright` ($\triangleright$).
+
+```{r}
+# equivalent to head(mtcars)
+mtcars |> head()
+```
+
+```{r}
+mtcars |>
+  select(mpg, disp) |>
+  mutate(nonsense = mpg + disp) |>
+  head()
+```
 
 
 ```{r}
-suppressPackageStartupMessages(library(tidyverse))
-x <- 1:5
-x <- tibble(x = x) |> filter(x != 3) |> pull(x)
-print("hi")
+head(mutate(select(mtcars, mpg, disp), nonsense = mpg + disp))
 ```
 
 
 
+```{r, fig.width=4, fig.height=3}
+mtcars |>
+  ggplot(aes(mpg, disp)) +
+  geom_point()
+```
 
+
+```{r, fig.width=4, fig.height=3}
+mtcars |>
+  ggplot(aes(mpg, disp, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.6)
+```
+
+
+```{r, fig.width=5, fig.height=3}
+mtcars |>
+  mutate(cyl = factor(cyl)) |>
+  ggplot(aes(mpg, disp, color = cyl, group = cyl)) +
+  geom_point(size = 3, alpha = 0.6) +
+  geom_smooth(method = 'lm', formula = y~x, se = FALSE) +
+  theme_bw() +
+  theme(legend.position = "inside", legend.position.inside = c(0.85, 0.7)) +
+  ggtitle("disp vs mpg, grouped by cyl",
+          subtitle = "with linear regression lines")
+```
 

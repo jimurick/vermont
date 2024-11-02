@@ -12,21 +12,28 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 [Quarto websites](https://quarto.org/docs/websites/)
 
+Most of the focus here is on the configuration, because 
+
 ## Files
 
-The main project folder includes these files:
+These are the main files in the root project folder that organize the website:
 
 - `_quarto.yml` - configuration file (see [Configuration](#configuration) below)
 - `index.qmd` - Quarto notebook that is the main page of the website
-- `README.qmd` - Quarto notebook rendered to `README.md` by running the command `quarto render README.qmd -t md` in the RStudio Terminal
-- `jim.ico` - I wrote my name with MS Paint and converted the PNG file to ICO
+- `README.qmd` - Quarto notebook rendered to `README.md` (see [Updating](#updating) below)
+- `jim.ico` - the icon shown in browser tabs (I wrote my name with MS Paint and converted the PNG file to ICO)
 - `scipts/`
-    - `util.R` - Variables and functions that may be needed in various places
-    - `style.scss` - A Sass file used to create some CSS for the website
-    - `util.js` - One javascript function that's used when you click the button on the map's popups
-    - `latex.js` - Some javascript that does the mathjax analog of $\LaTeX$ def/newcommand type commands (see the [mathjax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
+    - `util.R` - variables and functions that may be needed in various places
+    - `style.scss` - a Sass file used to create some CSS for the website
+    - `util.js` - one javascript function that's used when you click the button on the map's popups
+    - `latex.js` - some javascript that does the MathJax analog of $\LaTeX$ def/newcommand type commands (see the [MathJax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
 - `.gitignore` - used by git to specify filename patterns to exclude from the repo
 - `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
+
+The other website files are in these folders:
+
+- `notes/` has the Quarto notebooks that are rendered to HTML
+- `docs/` has all the rendered HTML/CSS/etc files that make up the site
 
 ## Configuration
 
@@ -43,7 +50,7 @@ project:
     - notes/website/website.qmd
 ```
 
-The next part 
+The next part determines the title/icon that appear on a browser tab, and the menus that are on the top navigation bar.
 
 ```
 website:
@@ -64,7 +71,7 @@ website:
         href: https://github.com/jimurick/vermont
 ```
 
-This is similar to the [Header](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) section of the 
+The last part is similar to the [Header](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.
 
 ```
 format:
@@ -75,20 +82,33 @@ format:
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
-      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
+      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code"
+                    rel="stylesheet">
       - text: <script type="text/javascript" src="/scripts/util.js"></script>
       - text: <script type="text/javascript" src="/scripts/latex.js"></script>
 ```
 
-## Rendering
+## Updating
+
+To update the website, I first render the README - but only if `README.qmd` was changed.
+
+```
+quarto render README.qmd -t md
+```
+
+Then render the rest of the pages of the website.
 
 ```
 quarto render
 ```
 
+To update the site, I add all changes to the git repo
+
 ```
-quarto render README.qmd -t md
+git add --all
 ```
+
+and then commit the changes in RStudio and push the changes to github.
 
 ## References
 

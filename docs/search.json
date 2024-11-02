@@ -60,28 +60,28 @@
     "href": "notes/website/website.html",
     "title": "Quarto Website Example",
     "section": "",
-    "text": "This section will describe the example in the main repo folder and the notes folder.\nQuarto websites"
+    "text": "This section will describe the example in the main repo folder and the notes folder.\nQuarto websites\nMost of the focus here is on the configuration, because"
   },
   {
     "objectID": "notes/website/website.html#files",
     "href": "notes/website/website.html#files",
     "title": "Quarto Website Example",
     "section": "Files",
-    "text": "Files\nThe main project folder includes these files:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md by running the command quarto render README.qmd -t md in the RStudio Terminal\njim.ico - I wrote my name with MS Paint and converted the PNG file to ICO\nscipts/\n\nutil.R - Variables and functions that may be needed in various places\nstyle.scss - A Sass file used to create some CSS for the website\nutil.js - One javascript function that’s used when you click the button on the map’s popups\nlatex.js - Some javascript that does the mathjax analog of \\(\\LaTeX\\) def/newcommand type commands (see the mathjax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available"
+    "text": "Files\nThese are the main files in the root project folder that organize the website:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md (see Updating below)\njim.ico - the icon shown in browser tabs (I wrote my name with MS Paint and converted the PNG file to ICO)\nscipts/\n\nutil.R - variables and functions that may be needed in various places\nstyle.scss - a Sass file used to create some CSS for the website\nutil.js - one javascript function that’s used when you click the button on the map’s popups\nlatex.js - some javascript that does the MathJax analog of \\(\\LaTeX\\) def/newcommand type commands (see the MathJax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available\n\nThe other website files are in these folders:\n\nnotes/ has the Quarto notebooks that are rendered to HTML\ndocs/ has all the rendered HTML/CSS/etc files that make up the site"
   },
   {
     "objectID": "notes/website/website.html#configuration",
     "href": "notes/website/website.html#configuration",
     "title": "Quarto Website Example",
     "section": "Configuration",
-    "text": "Configuration\nThe top of _quarto.yml describes the type of project, where the final website should go (notes folder), and which Quarto notebook files need to be rendered to HTML.\nproject:\n  type: website\n  output-dir: docs\n  render:\n    - index.qmd\n    - notes/quarto/quarto.qmd\n    - notes/shiny/shiny.qmd\n    - notes/website/website.qmd\nThe next part\nwebsite:\n  title: \"Vermont State Notes\"\n  favicon: jim.ico\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: notes/quarto/quarto.qmd\n        text: Quarto\n      - href: notes/shiny/shiny.qmd\n        text: Shiny\n      - href: notes/website/website.qmd\n        text: Website\n    tools:\n      - icon: github\n        href: https://github.com/jimurick/vermont\nThis is similar to the Header section of the\nformat:\n  html:\n    theme: scripts/styles.scss\n    css: scripts/styles.scss\n    toc: true\n    monofont: Fira Code\n    html-math-method: mathjax\n    include-in-header:\n      - text: &lt;link href=\"https://fonts.googleapis.com/css?family=Fira+Code\" rel=\"stylesheet\"&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/util.js\"&gt;&lt;/script&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/latex.js\"&gt;&lt;/script&gt;"
+    "text": "Configuration\nThe top of _quarto.yml describes the type of project, where the final website should go (notes folder), and which Quarto notebook files need to be rendered to HTML.\nproject:\n  type: website\n  output-dir: docs\n  render:\n    - index.qmd\n    - notes/quarto/quarto.qmd\n    - notes/shiny/shiny.qmd\n    - notes/website/website.qmd\nThe next part determines the title/icon that appear on a browser tab, and the menus that are on the top navigation bar.\nwebsite:\n  title: \"Vermont State Notes\"\n  favicon: jim.ico\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: notes/quarto/quarto.qmd\n        text: Quarto\n      - href: notes/shiny/shiny.qmd\n        text: Shiny\n      - href: notes/website/website.qmd\n        text: Website\n    tools:\n      - icon: github\n        href: https://github.com/jimurick/vermont\nThe last part is similar to the Header section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.\nformat:\n  html:\n    theme: scripts/styles.scss\n    css: scripts/styles.scss\n    toc: true\n    monofont: Fira Code\n    html-math-method: mathjax\n    include-in-header:\n      - text: &lt;link href=\"https://fonts.googleapis.com/css?family=Fira+Code\"\n                    rel=\"stylesheet\"&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/util.js\"&gt;&lt;/script&gt;\n      - text: &lt;script type=\"text/javascript\" src=\"/scripts/latex.js\"&gt;&lt;/script&gt;"
   },
   {
-    "objectID": "notes/website/website.html#rendering",
-    "href": "notes/website/website.html#rendering",
+    "objectID": "notes/website/website.html#updating",
+    "href": "notes/website/website.html#updating",
     "title": "Quarto Website Example",
-    "section": "Rendering",
-    "text": "Rendering\nquarto render\nquarto render README.qmd -t md"
+    "section": "Updating",
+    "text": "Updating\nTo update the website, I first render the README - but only if README.qmd was changed.\nquarto render README.qmd -t md\nThen render the rest of the pages of the website.\nquarto render\nTo update the site, I add all changes to the git repo\ngit add --all\nand then commit the changes in RStudio and push the changes to github."
   },
   {
     "objectID": "notes/website/website.html#references",
