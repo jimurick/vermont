@@ -4,8 +4,8 @@ project:
   render:
     - index.qmd
     - notes/quarto/quarto.qmd
-    - notes/shiny/shiny.qmd
     - notes/website/website.qmd
+    - notes/shiny/shiny.qmd
 
 website:
   title: "Vermont State Notes"
@@ -16,15 +16,15 @@ website:
         href: index.qmd
       - text: Quarto
         menu:
-          # The example is html, not qmd - you have to manually render that
+          # Note: The example is html, not qmd - you have to manually render it
           - text: Quarto Example
             href: examples/quarto/quarto_example.html
           - text: Other Notes
             href: notes/quarto/quarto.qmd
-      - text: Shiny
-        href: notes/shiny/shiny.qmd
       - text: Website
         href: notes/website/website.qmd
+      - text: Shiny
+        href: notes/shiny/shiny.qmd
     tools:
       - icon: github
         href: https://github.com/jimurick/vermont

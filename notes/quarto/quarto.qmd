@@ -16,7 +16,7 @@ The top of the file has this section of YAML configuration info, delimited by 3 
 
 ``` {.yaml .sourceCode}
 ---
-title: Quarto Example
+title: "Quarto Notebook Example"
 author: "Jim Urick"
 format:
   html:

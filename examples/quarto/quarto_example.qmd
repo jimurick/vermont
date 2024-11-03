@@ -1,5 +1,5 @@
 ---
-title: Quarto Example
+title: "Quarto Notebook Example"
 author: "Jim Urick"
 format:
   html:
@@ -16,7 +16,7 @@ format:
 
 ## Markup Languages
 
-Markdown and $\LaTeX$ are [markup languages](https://en.wikipedia.org/wiki/Markup_language). Notebooks generally allow some Markdown so you can write explanations in a more human-readable format. You can also include $\LaTeX$ in the Markdown.
+Markdown, $\LaTeX$ and HTML are [markup languages](https://en.wikipedia.org/wiki/Markup_language). Notebooks generally (including [Jupyter](https://jupyter.org/) and others) use Markdown so you can write explanations in a more readable format. With Quarto, you can also include $\LaTeX$ in the Markdown and then render to HTML or PDF.
 
 ### Markdown, R Markdown, Quarto
 

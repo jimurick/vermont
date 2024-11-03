@@ -1,25 +1,36 @@
 ---
 title: About the HospitalStarRatings App
-format: html
+format:
+  gfm:
+    html-math-method: mathjax
 ---
 
-This app uses the R package [hospitalstars](https://github.com/jimurick/hospitalstars)
+This app displays hospital scores from the Centers for Medicare & Medicaid Services (CMS). The hospital's star ratings (as of Oct 2023) are displayed on the map's popups. When you click "View Data", you can see that hospital's historical measure-level scores compared to the overall distribution for all hospitals.
 
 The package is based on two CMS sources:
 
 - Measure score data was taken from the [Hospitals archived data snapshots](https://data.cms.gov/provider-data/archived-data/hospitals)
 - The Star rating algorithm was translated to R from the [SAS Package](https://qualitynet.cms.gov/inpatient/public-reporting/overall-ratings/sas)
 
+The following sections describe the app's three tabs.
 
 ## Tab 1: Map
 
-I took the data in the package's dataframe `hospitalstars::hospital_info_df` and geocoded it with Google's [geocoding API](https://developers.google.com/maps/documentation/geocoding/overview) in python.
-
+I took CMS's list of hospitals and geocoded their addresses with Google's [geocoding API](https://developers.google.com/maps/documentation/geocoding/overview) in python. Although the geocoding was generally accurate, there are some mistakes. For example, New York's Lincoln Medical & Mental Health Center was confused with a similarly-named [facility in New Zealand](https://lincolnmedical.nz/).
 
 ## Tab 2: Plots
 
-CMS collects data from most larger hospitals to calculate the star ratings annually. There are about 50 measures that are used in the calculation; this table gives an example of three:
+CMS collects data from most larger hospitals to calculate the star ratings annually. There are about 50 measures that are used in the calculation; the measures are divided into are 5 groups:
 
+- Mortality
+- Patient Experience
+- Process
+- Readmission
+- Safety
+
+The following table gives examples of three measures.
+
+<div class="about-table">
 ```{r echo=FALSE, layout="l-body-outset"}
 hospitalstars::measure_info_df |>
   dplyr::arrange(desc(report_date)) |>
@@ -29,18 +40,12 @@ hospitalstars::measure_info_df |>
   dplyr::slice(c(1, 9, 40)) |>
   knitr::kable(format = "html", table.attr='class="about-table"')
 ```
+</div>
 
-The metrics are divided into are 5 groups:
-
-- Mortality
-- Patient Experience
-- Process
-- Readmission
-- Safety
 
 ## Tab 3: About
 
-Notes to give end-users motivation for the app and information about data sources.
+This page, written in Markdown, is intended to give end-users some motivation for the app, explanation of how it works, and information about its data sources.
 
 ## Gratuitous Math
 

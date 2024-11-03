@@ -32,7 +32,7 @@ The other website files are in these folders:
 
 ## Configuration {#configuration}
 
-The top of `_quarto.yml` describes the type of project, where the final website should go (`{r} repo_link("notes folder", "docs")`), and which Quarto notebook files need to be rendered to HTML.
+The top of `_quarto.yml` describes the type of project, where the final website should go (`{r} repo_link("docs folder", "docs")`), and which Quarto notebook files need to be rendered to HTML.
 
 ``` {.yaml .sourceCode}
 project:
@@ -45,7 +45,7 @@ project:
     - notes/website/website.qmd
 ```
 
-The next part determines the title/icon that appear on a browser tab, and the menus that are on the top navigation bar.
+The next part determines the title/icon that appear on a browser tab, and the menus that are on the top [navigation bar](https://quarto.org/docs/websites/website-navigation.html#top-navigation).
 
 ``` {.yaml .sourceCode}
 website:
@@ -53,20 +53,24 @@ website:
   favicon: jim.ico
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: notes/quarto/quarto.qmd
-        text: Quarto
-      - href: notes/shiny/shiny.qmd
-        text: Shiny
-      - href: notes/website/website.qmd
-        text: Website
+      - text: Home
+        href: index.qmd
+      - text: Quarto
+        menu:
+          - text: Quarto Example
+            href: examples/quarto/quarto_example.html
+          - text: Other Notes
+            href: notes/quarto/quarto.qmd
+      - text: Website
+        href: notes/website/website.qmd
+      - text: Shiny
+        href: notes/shiny/shiny.qmd
     tools:
       - icon: github
         href: https://github.com/jimurick/vermont
 ```
 
-The last part is similar to the [Header](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.
+The last part is similar to the [Header](../quarto/quarto.html#header) section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.
 
 ``` {.yaml .sourceCode}
 format:
@@ -79,7 +83,6 @@ format:
     include-in-header:
       - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code"
                     rel="stylesheet">
-      - text: <script type="text/javascript" src="/scripts/util.js"></script>
       - text: <script type="text/javascript" src="/scripts/latex.js"></script>
 ```
 
@@ -110,3 +113,4 @@ and then commit the changes in RStudio and push them to github.
 
 -   [Quarto websites](https://quarto.org/docs/websites/)
 -   [W3](https://www.w3schools.com/css/default.asp) can be good for info on HTML & CSS
+-   See the Quarto page [References](../quarto/quarto.html#references) for more

@@ -44,6 +44,7 @@ ui <-
     # The three tabs: Map, Plot and About
     tabPanel(
       title = "Map",
+      # Set the favicon
       tags$head(tags$link(rel = "icon", type="image/x-icon", href = "jim.ico")),
       # CSS to make the map take up most of the vertical space
       tags$style(type = "text/css",

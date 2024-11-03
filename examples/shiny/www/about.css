@@ -2,7 +2,8 @@
 /* By default, there's almost no space between columns in a table. This just
  * adds a little to make a table in the "About" page more readable.
  */
-table.about-table td,th {
+/*table.about-table td,th {*/
+div.about-table table td,th {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 1px;
@@ -10,7 +11,8 @@ table.about-table td,th {
   border: 1px solid black;
 }
 
-table.about-table {
+/*table.about-table {*/
+div.about-table table {
   margin-bottom: 1rem;
   margin-left: 2rem;
 }
