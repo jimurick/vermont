@@ -11,6 +11,7 @@ format:
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
       - text: <link rel="stylesheet" href="example_style.css">
+      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
 ---
 
 ## Markup Languages

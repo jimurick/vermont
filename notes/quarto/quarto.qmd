@@ -28,6 +28,8 @@ format:
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
       - text: <link rel="stylesheet" href="example_style.css">
+      - text: <link href="https://fonts.googleapis.com/css?family=Fira+Code"
+                    rel="stylesheet">
 ---
 ```
 
@@ -37,11 +39,11 @@ You can find lots of options in the [HTML Basics](https://quarto.org/docs/output
 -   [embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
 -   [monofont](https://quarto.org/docs/output-formats/html-themes.html#basic-options) specifies the Fira Code font for code
 -   [html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
--   [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) adds two scripts from the notebook's folder to the HTML header, one javascript and one CSS
+-   [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) adds two scripts from the notebook's folder to the HTML header, one javascript and one CSS, and links to google's [Fira Code](https://fonts.google.com/specimen/Fira+Code) font.
 
 ## MathJax Macros
 
-The file `{r} repo_link("quarto_example.qmd", "examples/quarto/latex.js")` sets this Javascript object:
+The file `{r} repo_link("latex.js", "examples/quarto/latex.js")` sets this Javascript object:
 
 ``` {.javascript .sourceCode}
 window.MathJax = {

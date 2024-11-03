@@ -245,19 +245,21 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;script type="text/javascript" src="./latex.js"&gt;&lt;/script&gt;</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link rel="stylesheet" href="example_style.css"&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link href="https://fonts.googleapis.com/css?family=Fira+Code"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">                    rel="stylesheet"&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can find lots of options in the <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics</a> documentation page. The ones I used are</p>
 <ul>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#table-of-contents">toc and toc-depth</a> put the table of contents on the top-right part of the screen</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained">embed-resources</a> renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.</li>
 <li><a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">monofont</a> specifies the Fira Code font for code</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">html-math-methods</a> specifies <a href="https://www.mathjax.org/">MathJax</a> as the engine for rendering math</li>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds two scripts from the notebook’s folder to the HTML header, one javascript and one CSS</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds two scripts from the notebook’s folder to the HTML header, one javascript and one CSS, and links to google’s <a href="https://fonts.google.com/specimen/Fira+Code">Fira Code</a> font.</li>
 </ul>
 </section>
 <section id="mathjax-macros" class="level2">
 <h2 class="anchored" data-anchor-id="mathjax-macros">MathJax Macros</h2>
-<p>The file <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/latex.js">quarto_example.qmd</a> sets this Javascript object:</p>
+<p>The file <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/latex.js">latex.js</a> sets this Javascript object:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">MathJax</span> <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tex</span><span class="op">:</span> {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">macros</span><span class="op">:</span> {</span>
