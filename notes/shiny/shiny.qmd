@@ -42,7 +42,7 @@ Widgets can be grouped into two categories: input widgets take data from users, 
 
 This shiny app uses an R package I made for a previous job called [`hospitalstars`](https://github.com/jimurick/hospitalstars). See the app's About tab for information about it.
 
-The package may be interesting because
+As you can see from the GitHub statistics, it is not popular. However, it still may be of some interest because
 
 -   There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. [My version](https://github.com/jimurick/hospitalstars/blob/master/src/k_means.cpp) was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter that's in the SAS k-means function [`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm).
 -   Most data manipulation is done with the package `data.table`, because it's much faster than `dplyr`.

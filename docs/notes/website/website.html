@@ -102,7 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
-<script type="text/javascript" src="../../scripts/util.js"></script>
 <script type="text/javascript" src="../../scripts/latex.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -228,9 +227,7 @@ window.Quarto = {
 </header>
 
 
-<p>This section will describe the example in the main repo folder and the <a href="https://github.com/jimurick/vermont/blob/main/notes">notes folder</a>.</p>
-<p><a href="https://quarto.org/docs/websites/">Quarto websites</a></p>
-<p>Most of the focus here is on the configuration, because</p>
+<p>This section describes the basics of how this website was created. See <a href="https://quarto.org/docs/websites/">Quarto’s documentation</a> for a general intro.</p>
 <section id="files" class="level2">
 <h2 class="anchored" data-anchor-id="files">Files</h2>
 <p>These are the main files in the root project folder that organize the website:</p>
@@ -241,10 +238,9 @@ window.Quarto = {
 <li><code>jim.ico</code> - the page’s <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a>, made with MS Paint and converted to ICO</li>
 <li><code>scipts/</code>
 <ul>
-<li><code>util.R</code> - variables and functions that may be needed in various places</li>
+<li><code>util.R</code> - variables and functions that may be needed throughout the project</li>
 <li><code>style.scss</code> - a Sass file used to create some CSS for the website</li>
-<li><code>util.js</code> - one javascript function that’s used when you click the button on the map’s popups</li>
-<li><code>latex.js</code> - some javascript that does the MathJax analog of <span class="math inline">\(\LaTeX\)</span> def/newcommand type commands (see the <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">MathJax docs</a>)</li>
+<li><code>latex.js</code> - javascript defining <span class="math inline">\(\LaTeX\)</span> macros (see the <a href="./notes/quarto/quarto.html#mathjax-macros">Quarto notes</a>)</li>
 </ul></li>
 <li><code>.gitignore</code> - used by git to specify filename patterns to exclude from the repo</li>
 <li><code>.Rprofile</code> - run when the project is opened; it defines some functions I want to be generally available</li>
@@ -299,13 +295,14 @@ window.Quarto = {
 </section>
 <section id="updating" class="level2">
 <h2 class="anchored" data-anchor-id="updating">Updating</h2>
-<p>To update the website, I first render the README - but only if <code>README.qmd</code> was changed.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render README.qmd <span class="at">-t</span> md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then render the rest of the pages of the website.</p>
+<p>Before rendering the website, there are two notebooks I may manually render - but only if those <code>.qmd</code> files changed.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render README.qmd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render examples/quarto/quarto_example.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then render the rest of the website.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To update the site, I add all changes to the git repo</p>
+<p>To update the site back on github, I add all changes to the git repo</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and then commit the changes in RStudio and push the changes to github.</p>
+<p>and then commit the changes in RStudio and push them to github.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

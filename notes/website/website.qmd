@@ -8,11 +8,7 @@ format: html
 #| include: false
 ```
 
-This section will describe the example in the main repo folder and the `{r} repo_link("notes folder", "notes")`.
-
-[Quarto websites](https://quarto.org/docs/websites/)
-
-Most of the focus here is on the configuration, because
+This section describes the basics of how this website was created. See [Quarto's documentation](https://quarto.org/docs/websites/) for a general intro.
 
 ## Files
 
@@ -23,10 +19,9 @@ These are the main files in the root project folder that organize the website:
 -   `README.qmd` - Quarto notebook rendered to `README.md` (see [Updating](#updating) below)
 -   `jim.ico` - the page's [favicon](https://en.wikipedia.org/wiki/Favicon), made with MS Paint and converted to ICO
 -   `scipts/`
-    -   `util.R` - variables and functions that may be needed in various places
+    -   `util.R` - variables and functions that may be needed throughout the project
     -   `style.scss` - a Sass file used to create some CSS for the website
-    -   `util.js` - one javascript function that's used when you click the button on the map's popups
-    -   `latex.js` - some javascript that does the MathJax analog of $\LaTeX$ def/newcommand type commands (see the [MathJax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
+    -   `latex.js` - javascript defining $\LaTeX$ macros (see the [Quarto notes](./notes/quarto/quarto.html#mathjax-macros))
 -   `.gitignore` - used by git to specify filename patterns to exclude from the repo
 -   `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
 
@@ -90,25 +85,26 @@ format:
 
 ## Updating {#updating}
 
-To update the website, I first render the README - but only if `README.qmd` was changed.
+Before rendering the website, there are two notebooks I may manually render - but only if those `.qmd` files changed.
 
 ``` {.bash .sourceCode}
-quarto render README.qmd -t md
+quarto render README.qmd
+quarto render examples/quarto/quarto_example.qmd
 ```
 
-Then render the rest of the pages of the website.
+Then render the rest of the website.
 
 ``` {.bash .sourceCode}         
 quarto render
 ```
 
-To update the site, I add all changes to the git repo
+To update the site back on github, I add all changes to the git repo
 
 ``` {.bash .sourceCode}
 git add --all
 ```
 
-and then commit the changes in RStudio and push the changes to github.
+and then commit the changes in RStudio and push them to github.
 
 ## References
 

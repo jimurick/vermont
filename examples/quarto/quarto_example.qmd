@@ -67,7 +67,7 @@ $$
 \frac{d}{dx}\int_{a}^{x}f(t)\,dt=f(x)
 $$
 
-You can show multiple lines of work with the `align` environment.
+Show multiple lines of work with the `align` environment.
 
 $$
 \begin{align*}
@@ -78,7 +78,7 @@ $$
 \end{align*}
 $$
 
-Use `pmatrix` to create matrices with parentheses. For example, if $f_n$ is the $n^{\textsf{th}}$ Fibonacci number, note that
+Use `pmatrix` to create matrices with parentheses; [there are others](https://www.overleaf.com/learn/latex/Matrices) like `bmatrix` for square bracket `[]` matrices. For example, if $f_n$ is the $n^{\textsf{th}}$ Fibonacci number, note that
 
 $$
 \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
@@ -171,7 +171,7 @@ mtcars |>
   geom_point()
 ```
 
-You can add color with a `color` aesthetic mapping. This also specifies that all points have a bigger size and some transparency.
+You can add color with a `color` aesthetic mapping. In the geom, I also specify that all points have a bigger size and some transparency.
 
 ```{r, fig.width=4, fig.height=3}
 mtcars |>

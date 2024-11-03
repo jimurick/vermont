@@ -68,7 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
-<script type="text/javascript" src="../../scripts/util.js"></script>
 <script type="text/javascript" src="../../scripts/latex.js"></script>
 
 
@@ -197,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="dependency-r-package-hospitalstars" class="level2">
 <h2 class="anchored" data-anchor-id="dependency-r-package-hospitalstars">Dependency: R Package <code>hospitalstars</code></h2>
 <p>This shiny app uses an R package I made for a previous job called <a href="https://github.com/jimurick/hospitalstars"><code>hospitalstars</code></a>. See the app’s About tab for information about it.</p>
-<p>The package may be interesting because</p>
+<p>As you can see from the GitHub statistics, it is not popular. However, it still may be of some interest because</p>
 <ul>
 <li>There is a C++ implementation of the <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> algorithm. <a href="https://github.com/jimurick/hospitalstars/blob/master/src/k_means.cpp">My version</a> was taken from the <code>amap</code> package (<a href="https://github.com/cran/amap/blob/master/src/kmeans.cpp">here</a>) and modified to add a parameter that’s in the SAS k-means function <a href="https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm"><code>FASTCLUS</code></a>.</li>
 <li>Most data manipulation is done with the package <code>data.table</code>, because it’s much faster than <code>dplyr</code>.</li>

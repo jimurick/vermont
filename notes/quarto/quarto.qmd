@@ -82,7 +82,7 @@ You may have noticed that some code chunks use options at the top like the follo
 -   `output=FALSE` - I use this when loading packages to prevent annoying messages from being printed in the HTML
 -   `fig.width=4, fig.height=3` - those control the dimensions of the image, and generally involve some trial and error to settle on
 
-Code chunk options are generally part of the [`knitr`](https://yihui.org/knitr/) package (see for example [this page](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html)).
+Code chunk options are generally part of the [`knitr`](https://yihui.org/knitr/) package, but [this Quarto page](https://quarto.org/docs/computations/execution-options.html) is a good general reference.
 
 ## References
 

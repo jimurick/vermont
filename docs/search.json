@@ -4,14 +4,14 @@
     "href": "notes/website/website.html",
     "title": "Quarto Website Example",
     "section": "",
-    "text": "This section will describe the example in the main repo folder and the notes folder.\nQuarto websites\nMost of the focus here is on the configuration, because"
+    "text": "This section describes the basics of how this website was created. See Quarto’s documentation for a general intro."
   },
   {
     "objectID": "notes/website/website.html#files",
     "href": "notes/website/website.html#files",
     "title": "Quarto Website Example",
     "section": "Files",
-    "text": "Files\nThese are the main files in the root project folder that organize the website:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md (see Updating below)\njim.ico - the page’s favicon, made with MS Paint and converted to ICO\nscipts/\n\nutil.R - variables and functions that may be needed in various places\nstyle.scss - a Sass file used to create some CSS for the website\nutil.js - one javascript function that’s used when you click the button on the map’s popups\nlatex.js - some javascript that does the MathJax analog of \\(\\LaTeX\\) def/newcommand type commands (see the MathJax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available\n\nThe other website files are in these folders:\n\nnotes/ has the Quarto notebooks that are rendered to HTML\ndocs/ has all the rendered HTML/CSS/etc files that make up the site"
+    "text": "Files\nThese are the main files in the root project folder that organize the website:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md (see Updating below)\njim.ico - the page’s favicon, made with MS Paint and converted to ICO\nscipts/\n\nutil.R - variables and functions that may be needed throughout the project\nstyle.scss - a Sass file used to create some CSS for the website\nlatex.js - javascript defining \\(\\LaTeX\\) macros (see the Quarto notes)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available\n\nThe other website files are in these folders:\n\nnotes/ has the Quarto notebooks that are rendered to HTML\ndocs/ has all the rendered HTML/CSS/etc files that make up the site"
   },
   {
     "objectID": "notes/website/website.html#configuration",
@@ -25,7 +25,7 @@
     "href": "notes/website/website.html#updating",
     "title": "Quarto Website Example",
     "section": "Updating",
-    "text": "Updating\nTo update the website, I first render the README - but only if README.qmd was changed.\nquarto render README.qmd -t md\nThen render the rest of the pages of the website.\nquarto render\nTo update the site, I add all changes to the git repo\ngit add --all\nand then commit the changes in RStudio and push the changes to github."
+    "text": "Updating\nBefore rendering the website, there are two notebooks I may manually render - but only if those .qmd files changed.\nquarto render README.qmd\nquarto render examples/quarto/quarto_example.qmd\nThen render the rest of the website.\nquarto render\nTo update the site back on github, I add all changes to the git repo\ngit add --all\nand then commit the changes in RStudio and push them to github."
   },
   {
     "objectID": "notes/website/website.html#references",
@@ -60,7 +60,7 @@
     "href": "notes/quarto/quarto.html#code-chunk-options",
     "title": "Quarto Notebook Example",
     "section": "Code Chunk Options",
-    "text": "Code Chunk Options\nYou may have noticed that some code chunks use options at the top like the following.\n\noutput=FALSE - I use this when loading packages to prevent annoying messages from being printed in the HTML\nfig.width=4, fig.height=3 - those control the dimensions of the image, and generally involve some trial and error to settle on\n\nCode chunk options are generally part of the knitr package (see for example this page)."
+    "text": "Code Chunk Options\nYou may have noticed that some code chunks use options at the top like the following.\n\noutput=FALSE - I use this when loading packages to prevent annoying messages from being printed in the HTML\nfig.width=4, fig.height=3 - those control the dimensions of the image, and generally involve some trial and error to settle on\n\nCode chunk options are generally part of the knitr package, but this Quarto page is a good general reference."
   },
   {
     "objectID": "notes/quarto/quarto.html#references",
@@ -109,7 +109,7 @@
     "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
     "title": "Shiny App Example",
     "section": "Dependency: R Package hospitalstars",
-    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I made for a previous job called hospitalstars. See the app’s About tab for information about it.\nThe package may be interesting because\n\nThere is a C++ implementation of the k-means clustering algorithm. My version was taken from the amap package (here) and modified to add a parameter that’s in the SAS k-means function FASTCLUS.\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr."
+    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I made for a previous job called hospitalstars. See the app’s About tab for information about it.\nAs you can see from the GitHub statistics, it is not popular. However, it still may be of some interest because\n\nThere is a C++ implementation of the k-means clustering algorithm. My version was taken from the amap package (here) and modified to add a parameter that’s in the SAS k-means function FASTCLUS.\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr."
   },
   {
     "objectID": "notes/shiny/shiny.html#references",
