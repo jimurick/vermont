@@ -8,7 +8,6 @@ format: html
 #| include: false
 ```
 
-
 This page describes this app posted to [shinyapps.io](https://www.shinyapps.io/):
 
   <https://jimurick.shinyapps.io/HospitalStarRatings/>
@@ -19,15 +18,16 @@ The code is in the repo folder `{r} repo_link("examples folder", "examples/shiny
 
 Here are the files that make up the app:
 
--   `app.R` - the main Shiny app file (see [App](#app) below)
+-   `app.R` - the main Shiny app file (see [App Organization](#app-organization) below)
 -   `util.R` - contains 1 function that is used a few times in `app.R`
 -   `www`
     -   `hospital_df.Rda` - an R data file that contains the `hospital_df` dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.
     -   `util.js` - a javascript file with one function that's called when you click the "View Data" button on a hospital's popup
     -   `about.css` - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.
+    -   `jim.ico` - the app's [favicon](https://en.wikipedia.org/wiki/Favicon), made with MS Paint and converted to ICO
 -   `About.qmd` - I render this to the markdown file `About.md` with the RStudio Terminal command `quarto render examples/shiny/About.qmd -t md`. Then include the markdown in the last tab of `app.R`.
 
-## App {#app}
+## App Organization {#app-organization}
 
 Shiny apps have two main parts:
 
@@ -44,7 +44,7 @@ This shiny app uses an R package I made for a previous job called [`hospitalstar
 
 The package may be interesting because
 
--   There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. It was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter that's in the SAS k-means function [`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm).
+-   There is a C++ implementation of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm. [My version](https://github.com/jimurick/hospitalstars/blob/master/src/k_means.cpp) was taken from the `amap` package ([here](https://github.com/cran/amap/blob/master/src/kmeans.cpp)) and modified to add a parameter that's in the SAS k-means function [`FASTCLUS`](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.4/statug/statug_fastclus_overview.htm).
 -   Most data manipulation is done with the package `data.table`, because it's much faster than `dplyr`.
 
 ## References
@@ -52,9 +52,9 @@ The package may be interesting because
 -   Books
     -   [Mastering Shiny](https://mastering-shiny.org/) is where you should start to learn shiny
     -   [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/) has more advanced info about using HTML/CSS/Javascript
-    -   [R Packages](https://r-pkgs.org/)
+    -   [R Packages](https://r-pkgs.org/) was the main reference I used to create `hospitalstars`
 -   Links
-    -   [Widget Gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+    -   [`shiny`'s Widget Gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
     -   [`htmlwidgets` Gallery](https://gallery.htmlwidgets.org/)
-    -   [bslib](https://rstudio.github.io/bslib/) makes it easier to use CSS/Sass and [bootstrap themes](https://themes.getbootstrap.com/) in your apps
-    -   [`data.table`](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) defines the `data.table` class, which is very good for processing bigger tables :::
+    -   [`bslib`](https://rstudio.github.io/bslib/) makes it easier to use CSS/Sass and [bootstrap themes](https://themes.getbootstrap.com/) in your apps
+    -   [`data.table`](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) defines the `data.table` class, which is very good for processing bigger tables

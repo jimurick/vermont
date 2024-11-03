@@ -135,7 +135,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="scripts/styles.scss">
+<link rel="stylesheet" href="../../scripts/style.scss">
 </head>
 
 <body class="nav-fixed">
@@ -159,10 +159,21 @@ window.Quarto = {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../notes/quarto/quarto.html" aria-current="page"> 
-<span class="menu-text">Quarto</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="../../examples/quarto/quarto_example.html">
+ <span class="dropdown-text">Quarto Example</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../notes/quarto/quarto.html">
+ <span class="dropdown-text">Other Notes</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../notes/shiny/shiny.html"> 
 <span class="menu-text">Shiny</span></a>
@@ -189,11 +200,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#header" id="toc-header" class="nav-link active" data-scroll-target="#header">Header</a></li>
-  <li><a href="#code-chunks-and-plots" id="toc-code-chunks-and-plots" class="nav-link" data-scroll-target="#code-chunks-and-plots">Code Chunks and Plots</a></li>
-  <li><a href="#todo-image-preview-example" id="toc-todo-image-preview-example" class="nav-link" data-scroll-target="#todo-image-preview-example">TODO: image preview example</a>
-  <ul class="collapse">
+  <li><a href="#mathjax-macros" id="toc-mathjax-macros" class="nav-link" data-scroll-target="#mathjax-macros">MathJax Macros</a></li>
+  <li><a href="#code-chunk-options" id="toc-code-chunk-options" class="nav-link" data-scroll-target="#code-chunk-options">Code Chunk Options</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,71 +228,71 @@ window.Quarto = {
 </header>
 
 
-<p>This section will describe the <strong>Quarto notebook</strong> example in the repo’s <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd">examples folder</a>.</p>
-<p><span class="math display">\[
-\eps\in\R
-\]</span></p>
-<p><span class="math display">\[
-\y=\X\betaB, \beta
-\]</span></p>
-<section id="header" class="level1">
-<h1>Header</h1>
-<p>The top of the file has this section of YAML delimited by 3 dashes above and below:</p>
-<pre><code>---
-title: Quarto Example
-author: "Jim Urick"
-format:
-  html:
-    embed-resources: true
-    monofont: Fira Code
-    html-math-method: mathjax
-    include-in-header:
-      - text: &lt;script type="text/javascript" src="./latex.js"&gt;&lt;/script&gt;
----</code></pre>
+<p>This section has some notes on the <a href="../../examples/quarto/quarto_example.html">Quarto notebook example</a>. The source code is in file <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd">quarto_example.qmd</a>.</p>
+<section id="header" class="level2">
+<h2 class="anchored" data-anchor-id="header">Header</h2>
+<p>The top of the file has this section of YAML configuration info, delimited by 3 dashes above and below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Quarto Example</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Jim Urick"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Fira Code</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html-math-method</span><span class="kw">:</span><span class="at"> mathjax</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;script type="text/javascript" src="./latex.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link rel="stylesheet" href="example_style.css"&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can find lots of options in the <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics</a> documentation page. The ones I used are</p>
 <ul>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#table-of-contents">toc and toc-depth</a> put the table of contents on the top-right part of the screen</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained">embed-resources</a> renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.</li>
-<li><a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">monofont</a> to use Fira Code</li>
+<li><a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">monofont</a> specifies the Fira Code font for code</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">html-math-methods</a> specifies <a href="https://www.mathjax.org/">MathJax</a> as the engine for rendering math</li>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds two scripts from the notebook’s folder to the HTML header, one javascript and one CSS</li>
 </ul>
 </section>
-<section id="code-chunks-and-plots" class="level1">
-<h1>Code Chunks and Plots</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mpg, disp)) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quarto_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="todo-image-preview-example" class="level1">
-<h1>TODO: image preview example</h1>
+<section id="mathjax-macros" class="level2">
+<h2 class="anchored" data-anchor-id="mathjax-macros">MathJax Macros</h2>
+<p>The file <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/latex.js">quarto_example.qmd</a> sets this Javascript object:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">MathJax</span> <span class="op">=</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tex</span><span class="op">:</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">macros</span><span class="op">:</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">mathbf{y}"</span><span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">X</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">mathbf{X}"</span><span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">R</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">mathbb{R}"</span><span class="op">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">eps</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">varepsilon"</span><span class="op">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">epsB</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">boldsymbol{</span><span class="sc">\\</span><span class="st">varepsilon}"</span><span class="op">,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">betaB</span><span class="op">:</span> <span class="st">"</span><span class="sc">\\</span><span class="st">boldsymbol{</span><span class="sc">\\</span><span class="st">beta}"</span><span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">Var</span><span class="op">:</span> [<span class="st">"</span><span class="sc">\\</span><span class="st">mathop{</span><span class="sc">\\</span><span class="st">mathrm{Var}}"</span><span class="op">,</span> <span class="dv">0</span>]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is equivalent to the following <span class="math inline">\(\LaTeX\)</span> commands.</p>
 <ul>
-<li><span class="error-text">File 'img/does_not_exist.PNG' does not exist!</span></li>
+<li><code>\def\y{\mathbf{y}}</code></li>
+<li><code>\def\X{\mathbf{X}}</code></li>
+<li><code>\def\R{\mathbb{R}}</code></li>
+<li><code>\def\eps{\varepsilon}</code></li>
+<li><code>\def\epsB{\boldsymbol{\varepsilon}}</code></li>
+<li><code>\def\betaB{\boldsymbol{\beta}}</code></li>
+<li><code>\DeclareMathOperator{\Var}{Var}</code></li>
 </ul>
+<p>The <code>\def</code>s allow me to write the multivariate linear regression equation <span class="math inline">\(\y=\X\betaB\)</span> as <code>\y=\X\betaB</code>.</p>
+<p>The <code>\DeclareMathOperator</code> lets you write <code>\Var\y</code> for statistical variance, <span class="math inline">\(\Var\y\)</span>, in a way that looks nicer than, say <code>\textrm{Var}\y</code>=<span class="math inline">\(\textrm{Var}\y\)</span>.</p>
+</section>
+<section id="code-chunk-options" class="level2">
+<h2 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h2>
+<p>You may have noticed that some code chunks use options at the top like the following.</p>
+<ul>
+<li><code>output=FALSE</code> - I use this when loading packages to prevent annoying messages from being printed in the HTML</li>
+<li><code>fig.width=4, fig.height=3</code> - those control the dimensions of the image, and generally involve some trial and error to settle on</li>
+</ul>
+<p>Code chunk options are generally part of the <a href="https://yihui.org/knitr/"><code>knitr</code></a> package (see for example <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html">this page</a>).</p>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
@@ -308,7 +317,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

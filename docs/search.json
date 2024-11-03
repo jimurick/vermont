@@ -1,61 +1,5 @@
 [
   {
-    "objectID": "notes/quarto/quarto.html",
-    "href": "notes/quarto/quarto.html",
-    "title": "Quarto Notebook Example",
-    "section": "",
-    "text": "This section will describe the Quarto notebook example in the repo’s examples folder.\n\\[\n\\eps\\in\\R\n\\]\n\\[\n\\y=\\X\\betaB, \\beta\n\\]"
-  },
-  {
-    "objectID": "notes/quarto/quarto.html#references",
-    "href": "notes/quarto/quarto.html#references",
-    "title": "Quarto Notebook Example",
-    "section": "References",
-    "text": "References\n\n\\(\\LaTeX\\) and MathJax\n\n\\(\\LaTeX\\) Cheat Sheet\nThe Comprehensive \\(\\LaTeX\\) Symbol List\nMathJax documentation for defining TeX macros in javascript\n\nR\n\nR for Data Science is a good intro to dplyr and several related packages.\nggplot2\nJulia Silge’s YouTube has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with tidymodels\n\nOther\n\nMarkdown Cheat Sheet\nThe Quarto website’s HTML Basics includes a bunch of links from above.\nInstall Fira Code"
-  },
-  {
-    "objectID": "notes/shiny/shiny.html",
-    "href": "notes/shiny/shiny.html",
-    "title": "Shiny App Example",
-    "section": "",
-    "text": "This page describes this app posted to shinyapps.io:\nhttps://jimurick.shinyapps.io/HospitalStarRatings/\nThe code is in the repo folder examples folder."
-  },
-  {
-    "objectID": "notes/shiny/shiny.html#files",
-    "href": "notes/shiny/shiny.html#files",
-    "title": "Shiny App Example",
-    "section": "Files",
-    "text": "Files\nHere are the files that make up the app:\n\napp.R - the main Shiny app file (see App below)\nutil.R - contains 1 function that is used a few times in app.R\nwww\n\nhospital_df.Rda - an R data file that contains the hospital_df dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.\nutil.js - a javascript file with one function that’s called when you click the “View Data” button on a hospital’s popup\nabout.css - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.\n\nAbout.qmd - I render this to the markdown file About.md with the RStudio Terminal command quarto render examples/shiny/About.qmd -t md. Then include the markdown in the last tab of app.R."
-  },
-  {
-    "objectID": "notes/shiny/shiny.html#app",
-    "href": "notes/shiny/shiny.html#app",
-    "title": "Shiny App Example",
-    "section": "App",
-    "text": "App\nShiny apps have two main parts:\n\nThe user interface (typically using the variable ui) defines the layout and the widgets included in the app.\nThe server (typically a function named server) determines the interactions connecting the widgets.\n\nThere are a lot of basic widgets that come with the shiny package (widget gallery). There are also a lot of free packages that were created with the htmlwidgets package (htmlwidgets gallery). Many of those were developed for javascript widgets, and htmlwidgets allowed people to create R wrappers for them.\nWidgets can be grouped into two categories: input widgets take data from users, and output widgets display data to users. There are also intermediate (between input & output) objects, like the dataframes in the app created by the reactive() function. See Basic reactivity from Mastering Shiny for more."
-  },
-  {
-    "objectID": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
-    "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
-    "title": "Shiny App Example",
-    "section": "Dependency: R Package hospitalstars",
-    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I made for a previous job called hospitalstars. See the app’s About tab for information about it.\nThe package may be interesting because\n\nThere is a C++ implementation of the k-means clustering algorithm. It was taken from the amap package (here) and modified to add a parameter that’s in the SAS k-means function FASTCLUS.\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr."
-  },
-  {
-    "objectID": "notes/shiny/shiny.html#references",
-    "href": "notes/shiny/shiny.html#references",
-    "title": "Shiny App Example",
-    "section": "References",
-    "text": "References\n\nBooks\n\nMastering Shiny is where you should start to learn shiny\nOutstanding User Interfaces with Shiny has more advanced info about using HTML/CSS/Javascript\nR Packages\n\nLinks\n\nWidget Gallery\nhtmlwidgets Gallery\nbslib makes it easier to use CSS/Sass and bootstrap themes in your apps\ndata.table defines the data.table class, which is very good for processing bigger tables :::"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Vermont State Notes",
-    "section": "",
-    "text": "The notes here are for 3 examples:\n\nA Quarto notebook\n\nNotebook file: vermont/examples/quarto/quarto_example.qmd\nincluding math with mathjax\nplots, some of which are interactive\norganizing notes into a website with github pages\n\nA Shiny app\n\nApp posted to shinyapps.io: https://jimurick.shinyapps.io/HospitalStarRatings/\nMain R script here: vermont/examples/shiny/app.R\nDepends on my R package hospitalstars\n\nThis Quarto website\n\nConfiguration is in the main vertmont repo folder\nOther pages are under the folder vermont/notes"
-  },
-  {
     "objectID": "notes/website/website.html",
     "href": "notes/website/website.html",
     "title": "Quarto Website Example",
@@ -67,7 +11,7 @@
     "href": "notes/website/website.html#files",
     "title": "Quarto Website Example",
     "section": "Files",
-    "text": "Files\nThese are the main files in the root project folder that organize the website:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md (see Updating below)\njim.ico - the icon shown in browser tabs (I wrote my name with MS Paint and converted the PNG file to ICO)\nscipts/\n\nutil.R - variables and functions that may be needed in various places\nstyle.scss - a Sass file used to create some CSS for the website\nutil.js - one javascript function that’s used when you click the button on the map’s popups\nlatex.js - some javascript that does the MathJax analog of \\(\\LaTeX\\) def/newcommand type commands (see the MathJax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available\n\nThe other website files are in these folders:\n\nnotes/ has the Quarto notebooks that are rendered to HTML\ndocs/ has all the rendered HTML/CSS/etc files that make up the site"
+    "text": "Files\nThese are the main files in the root project folder that organize the website:\n\n_quarto.yml - configuration file (see Configuration below)\nindex.qmd - Quarto notebook that is the main page of the website\nREADME.qmd - Quarto notebook rendered to README.md (see Updating below)\njim.ico - the page’s favicon, made with MS Paint and converted to ICO\nscipts/\n\nutil.R - variables and functions that may be needed in various places\nstyle.scss - a Sass file used to create some CSS for the website\nutil.js - one javascript function that’s used when you click the button on the map’s popups\nlatex.js - some javascript that does the MathJax analog of \\(\\LaTeX\\) def/newcommand type commands (see the MathJax docs)\n\n.gitignore - used by git to specify filename patterns to exclude from the repo\n.Rprofile - run when the project is opened; it defines some functions I want to be generally available\n\nThe other website files are in these folders:\n\nnotes/ has the Quarto notebooks that are rendered to HTML\ndocs/ has all the rendered HTML/CSS/etc files that make up the site"
   },
   {
     "objectID": "notes/website/website.html#configuration",
@@ -89,5 +33,89 @@
     "title": "Quarto Website Example",
     "section": "References",
     "text": "References\n\nQuarto websites\nW3 can be good for info on HTML & CSS"
+  },
+  {
+    "objectID": "notes/quarto/quarto.html",
+    "href": "notes/quarto/quarto.html",
+    "title": "Quarto Notebook Example",
+    "section": "",
+    "text": "This section has some notes on the Quarto notebook example. The source code is in file quarto_example.qmd."
+  },
+  {
+    "objectID": "notes/quarto/quarto.html#header",
+    "href": "notes/quarto/quarto.html#header",
+    "title": "Quarto Notebook Example",
+    "section": "Header",
+    "text": "Header\nThe top of the file has this section of YAML configuration info, delimited by 3 dashes above and below.\n---\ntitle: Quarto Example\nauthor: \"Jim Urick\"\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n    embed-resources: true\n    monofont: Fira Code\n    html-math-method: mathjax\n    include-in-header:\n      - text: &lt;script type=\"text/javascript\" src=\"./latex.js\"&gt;&lt;/script&gt;\n      - text: &lt;link rel=\"stylesheet\" href=\"example_style.css\"&gt;\n---\nYou can find lots of options in the HTML Basics documentation page. The ones I used are\n\ntoc and toc-depth put the table of contents on the top-right part of the screen\nembed-resources renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.\nmonofont specifies the Fira Code font for code\nhtml-math-methods specifies MathJax as the engine for rendering math\ninclude-in-header adds two scripts from the notebook’s folder to the HTML header, one javascript and one CSS"
+  },
+  {
+    "objectID": "notes/quarto/quarto.html#mathjax-macros",
+    "href": "notes/quarto/quarto.html#mathjax-macros",
+    "title": "Quarto Notebook Example",
+    "section": "MathJax Macros",
+    "text": "MathJax Macros\nThe file quarto_example.qmd sets this Javascript object:\nwindow.MathJax = {\n  tex: {\n    macros: {\n      y: \"\\\\mathbf{y}\",\n      X: \"\\\\mathbf{X}\",\n      R: \"\\\\mathbb{R}\",\n      eps: \"\\\\varepsilon\",\n      epsB: \"\\\\boldsymbol{\\\\varepsilon}\",\n      betaB: \"\\\\boldsymbol{\\\\beta}\",\n      Var: [\"\\\\mathop{\\\\mathrm{Var}}\", 0]\n    }\n  }\n};\nThis is equivalent to the following \\(\\LaTeX\\) commands.\n\n\\def\\y{\\mathbf{y}}\n\\def\\X{\\mathbf{X}}\n\\def\\R{\\mathbb{R}}\n\\def\\eps{\\varepsilon}\n\\def\\epsB{\\boldsymbol{\\varepsilon}}\n\\def\\betaB{\\boldsymbol{\\beta}}\n\\DeclareMathOperator{\\Var}{Var}\n\nThe \\defs allow me to write the multivariate linear regression equation \\(\\y=\\X\\betaB\\) as \\y=\\X\\betaB.\nThe \\DeclareMathOperator lets you write \\Var\\y for statistical variance, \\(\\Var\\y\\), in a way that looks nicer than, say \\textrm{Var}\\y=\\(\\textrm{Var}\\y\\)."
+  },
+  {
+    "objectID": "notes/quarto/quarto.html#code-chunk-options",
+    "href": "notes/quarto/quarto.html#code-chunk-options",
+    "title": "Quarto Notebook Example",
+    "section": "Code Chunk Options",
+    "text": "Code Chunk Options\nYou may have noticed that some code chunks use options at the top like the following.\n\noutput=FALSE - I use this when loading packages to prevent annoying messages from being printed in the HTML\nfig.width=4, fig.height=3 - those control the dimensions of the image, and generally involve some trial and error to settle on\n\nCode chunk options are generally part of the knitr package (see for example this page)."
+  },
+  {
+    "objectID": "notes/quarto/quarto.html#references",
+    "href": "notes/quarto/quarto.html#references",
+    "title": "Quarto Notebook Example",
+    "section": "References",
+    "text": "References\n\n\\(\\LaTeX\\) and MathJax\n\n\\(\\LaTeX\\) Cheat Sheet\nThe Comprehensive \\(\\LaTeX\\) Symbol List\nMathJax documentation for defining TeX macros in javascript\n\nR\n\nR for Data Science is a good intro to dplyr and several related packages.\nggplot2\nJulia Silge’s YouTube has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with tidymodels\n\nOther\n\nMarkdown Cheat Sheet\nThe Quarto website’s HTML Basics includes a bunch of links from above.\nInstall Fira Code"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vermont State Notes",
+    "section": "",
+    "text": "The notes here are for 3 examples:"
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Vermont State Notes",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nYou should install\n\nThe R language (Windows, macOS)\nRStudio\nIf you want to run the Shiny app, the hospitalstars R package"
+  },
+  {
+    "objectID": "notes/shiny/shiny.html",
+    "href": "notes/shiny/shiny.html",
+    "title": "Shiny App Example",
+    "section": "",
+    "text": "This page describes this app posted to shinyapps.io:\nhttps://jimurick.shinyapps.io/HospitalStarRatings/\nThe code is in the repo folder examples folder."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#files",
+    "href": "notes/shiny/shiny.html#files",
+    "title": "Shiny App Example",
+    "section": "Files",
+    "text": "Files\nHere are the files that make up the app:\n\napp.R - the main Shiny app file (see App Organization below)\nutil.R - contains 1 function that is used a few times in app.R\nwww\n\nhospital_df.Rda - an R data file that contains the hospital_df dataframe, with one row per hospital, including columns for latitude/longitude and the HTML in the marker popups.\nutil.js - a javascript file with one function that’s called when you click the “View Data” button on a hospital’s popup\nabout.css - a CSS file that changes the style of a table in the About tab, and also changes the color of monospaced code font from purple (the default) to black.\njim.ico - the app’s favicon, made with MS Paint and converted to ICO\n\nAbout.qmd - I render this to the markdown file About.md with the RStudio Terminal command quarto render examples/shiny/About.qmd -t md. Then include the markdown in the last tab of app.R."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#app-organization",
+    "href": "notes/shiny/shiny.html#app-organization",
+    "title": "Shiny App Example",
+    "section": "App Organization",
+    "text": "App Organization\nShiny apps have two main parts:\n\nThe user interface (typically using the variable ui) defines the layout and the widgets included in the app.\nThe server (typically a function named server) determines the interactions connecting the widgets.\n\nThere are a lot of basic widgets that come with the shiny package (widget gallery). There are also a lot of free packages that were created with the htmlwidgets package (htmlwidgets gallery). Many of those were developed for javascript widgets, and htmlwidgets allowed people to create R wrappers for them.\nWidgets can be grouped into two categories: input widgets take data from users, and output widgets display data to users. There are also intermediate (between input & output) objects, like the dataframes in the app created by the reactive() function. See Basic reactivity from Mastering Shiny for more."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "href": "notes/shiny/shiny.html#dependency-r-package-hospitalstars",
+    "title": "Shiny App Example",
+    "section": "Dependency: R Package hospitalstars",
+    "text": "Dependency: R Package hospitalstars\nThis shiny app uses an R package I made for a previous job called hospitalstars. See the app’s About tab for information about it.\nThe package may be interesting because\n\nThere is a C++ implementation of the k-means clustering algorithm. My version was taken from the amap package (here) and modified to add a parameter that’s in the SAS k-means function FASTCLUS.\nMost data manipulation is done with the package data.table, because it’s much faster than dplyr."
+  },
+  {
+    "objectID": "notes/shiny/shiny.html#references",
+    "href": "notes/shiny/shiny.html#references",
+    "title": "Shiny App Example",
+    "section": "References",
+    "text": "References\n\nBooks\n\nMastering Shiny is where you should start to learn shiny\nOutstanding User Interfaces with Shiny has more advanced info about using HTML/CSS/Javascript\nR Packages was the main reference I used to create hospitalstars\n\nLinks\n\nshiny’s Widget Gallery\nhtmlwidgets Gallery\nbslib makes it easier to use CSS/Sass and bootstrap themes in your apps\ndata.table defines the data.table class, which is very good for processing bigger tables"
   }
 ]

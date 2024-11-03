@@ -12,22 +12,27 @@ website:
   favicon: jim.ico
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: notes/quarto/quarto.qmd
-        text: Quarto
-      - href: notes/shiny/shiny.qmd
-        text: Shiny
-      - href: notes/website/website.qmd
-        text: Website
+      - text: Home
+        href: index.qmd
+      - text: Quarto
+        menu:
+          # The example is html, not qmd - you have to manually render that
+          - text: Quarto Example
+            href: examples/quarto/quarto_example.html
+          - text: Other Notes
+            href: notes/quarto/quarto.qmd
+      - text: Shiny
+        href: notes/shiny/shiny.qmd
+      - text: Website
+        href: notes/website/website.qmd
     tools:
       - icon: github
         href: https://github.com/jimurick/vermont
 
 format:
   html:
-    theme: scripts/styles.scss
-    css: scripts/styles.scss
+    theme: scripts/style.scss
+    css: scripts/style.scss
     toc: true
     monofont: Fira Code
     html-math-method: mathjax

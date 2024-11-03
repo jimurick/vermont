@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/javascript" src="./scripts/latex.js"></script>
 
 
-<link rel="stylesheet" href="scripts/styles.scss">
+<link rel="stylesheet" href="scripts/style.scss">
 </head>
 
 <body class="nav-fixed">
@@ -97,10 +97,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notes/quarto/quarto.html"> 
-<span class="menu-text">Quarto</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quarto" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quarto</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quarto">    
+        <li>
+    <a class="dropdown-item" href="./examples/quarto/quarto_example.html">
+ <span class="dropdown-text">Quarto Example</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./notes/quarto/quarto.html">
+ <span class="dropdown-text">Other Notes</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./notes/shiny/shiny.html"> 
 <span class="menu-text">Shiny</span></a>
@@ -121,8 +132,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -156,25 +173,32 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>A <a href="./notes/quarto/quarto.html">Quarto notebook</a>
 <ul>
+<li>Rendered HTML: <a href="./examples/quarto/quarto_example.html"><code>vermont/examples/quarto/quarto_example.html</code></a></li>
 <li>Notebook file: <a href="https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd"><code>vermont/examples/quarto/quarto_example.qmd</code></a></li>
-<li>including math with mathjax</li>
-<li>plots, some of which are interactive</li>
-<li>organizing notes into a website with github pages</li>
+</ul></li>
+<li>This <a href="./notes/website/website.html">Quarto website</a>
+<ul>
+<li>Most configuration files are in the main <a href="https://github.com/jimurick/vermont">vertmont repo</a> folder</li>
+<li>Other pages are under the folder <a href="https://github.com/jimurick/vermont/tree/main/notes"><code>vermont/notes</code></a></li>
 </ul></li>
 <li>A <a href="./notes/shiny/shiny.html">Shiny app</a>
 <ul>
 <li>App posted to shinyapps.io: <a href="https://jimurick.shinyapps.io/HospitalStarRatings/" class="uri">https://jimurick.shinyapps.io/HospitalStarRatings/</a></li>
-<li>Main R script here: <a href="https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R"><code>vermont/examples/shiny/app.R</code></a></li>
-<li>Depends on my R package <a href="https://github.com/jimurick/hospitalstars"><code>hospitalstars</code></a></li>
+<li>R script: <a href="https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R"><code>vermont/examples/shiny/app.R</code></a></li>
+<li>Depends on the R package <a href="https://github.com/jimurick/hospitalstars"><code>hospitalstars</code></a></li>
 </ul></li>
-<li>This <a href="./notes/website/website.html">Quarto website</a>
+</ul>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>You should install</p>
 <ul>
-<li>Configuration is in the main <a href="https://github.com/jimurick/vermont">vertmont repo</a> folder</li>
-<li>Other pages are under the folder <a href="https://github.com/jimurick/vermont/tree/main/notes"><code>vermont/notes</code></a></li>
-</ul></li>
+<li>The R language (<a href="https://cran.r-project.org/bin/windows/base/">Windows</a>, <a href="https://cran.r-project.org/bin/macosx/">macOS</a>)</li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li>If you want to run the Shiny app, the <a href="https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation"><code>hospitalstars</code></a> R package</li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

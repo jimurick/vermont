@@ -8,15 +8,21 @@ format: html
 The notes here are for 3 examples:
 
 - A [Quarto notebook](./notes/quarto/quarto.html)
+    - Rendered HTML: [`vermont/examples/quarto/quarto_example.html`](./examples/quarto/quarto_example.html)
     - Notebook file: [`vermont/examples/quarto/quarto_example.qmd`](https://github.com/jimurick/vermont/blob/main/examples/quarto/quarto_example.qmd)
-    - including math with mathjax
-    - plots, some of which are interactive
-    - organizing notes into a website with github pages
+- This [Quarto website](./notes/website/website.html)
+    - Most configuration files are in the main [vertmont repo](https://github.com/jimurick/vermont) folder
+    - Other pages are under the folder [`vermont/notes`](https://github.com/jimurick/vermont/tree/main/notes)
 - A [Shiny app](./notes/shiny/shiny.html)
     - App posted to shinyapps.io: <https://jimurick.shinyapps.io/HospitalStarRatings/>
-    - Main R script here: [`vermont/examples/shiny/app.R`](https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R)
-    - Depends on my R package [`hospitalstars`](https://github.com/jimurick/hospitalstars)
-- This [Quarto website](./notes/website/website.html)
-    - Configuration is in the main [vertmont repo](https://github.com/jimurick/vermont) folder
-    - Other pages are under the folder [`vermont/notes`](https://github.com/jimurick/vermont/tree/main/notes)
+    - R script: [`vermont/examples/shiny/app.R`](https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R)
+    - Depends on the R package [`hospitalstars`](https://github.com/jimurick/hospitalstars)
+
+## Prerequisites
+
+You should install
+
+- The R language ([Windows](https://cran.r-project.org/bin/windows/base/), [macOS](https://cran.r-project.org/bin/macosx/))
+- [RStudio](https://posit.co/download/rstudio-desktop/)
+- If you want to run the Shiny app, the [`hospitalstars`](https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation) R package
 

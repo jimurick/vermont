@@ -1,11 +1,4 @@
 /*-- scss:defaults --*/
-/*
-$body-bg: #191919;
-$body-color: #fff;
-$link-color: #42affa;
-*/
-
-$presentation-block-margin: 0px;
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -42,32 +35,10 @@ $dark:          $brown-dark !default;
 
 /*-- scss:rules --*/
 
-.image-preview {
-  position: fixed;
-  z-index: 1000;
-  display: none;
-  width: 400px;
-  height: 400px;
-  background-color: rgba(0,0,0,0);
-  pointer-events: none;
-}
-
-.image-preview img {
-  width: auto;
-  height: auto;
-  max-width: 400px;
-  max-height: 400px;
-}
-
-
-// https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.w3schools.com%2Fcolors%2Fcolors_names.asp&data=05%7C02%7Curickj%40chop.edu%7C42c27c534c834e3bc94708dcf67a9edf%7Ca611241607b041a59bb1d146b575c975%7C0%7C0%7C638656253722244208%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=62vDZ8YXHtnQluCNScR%2FnXEOcEOi2%2BkrxDeXYd%2BzJ4I%3D&reserved=0
-// TODO: This should probably relate to $warning/$danger above
-.error-text {
-  font-weight: bold;
-  color: red;
-  background-color: pink;
-}
-
 
 /* css styles */
+
+code {
+  color: black;
+}
 

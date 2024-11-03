@@ -44,6 +44,7 @@ ui <-
     # The three tabs: Map, Plot and About
     tabPanel(
       title = "Map",
+      tags$head(tags$link(rel = "icon", type="image/x-icon", href = "jim.ico")),
       # CSS to make the map take up most of the vertical space
       tags$style(type = "text/css",
                  '#map {height: calc(100vh - 200px) !important;}'),

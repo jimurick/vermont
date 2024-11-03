@@ -8,83 +8,91 @@ format: html
 #| include: false
 ```
 
-This section will describe the **Quarto notebook** example in the repo's `{r} repo_link("examples folder", "examples/quarto/quarto_example.qmd")`.
+This section has some notes on the [Quarto notebook example](../../examples/quarto/quarto_example.html). The source code is in file `{r} repo_link("quarto_example.qmd", "examples/quarto/quarto_example.qmd")`.
 
-$$
-\eps\in\R
-$$
+## Header
 
-$$
-\y=\X\betaB, \beta
-$$
+The top of the file has this section of YAML configuration info, delimited by 3 dashes above and below.
 
-# Header
-
-The top of the file has this section of YAML delimited by 3 dashes above and below:
-
-```
+``` {.yaml .sourceCode}
 ---
 title: Quarto Example
 author: "Jim Urick"
 format:
   html:
+    toc: true
+    toc-depth: 3
     embed-resources: true
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
+      - text: <link rel="stylesheet" href="example_style.css">
 ---
 ```
 
 You can find lots of options in the [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) documentation page. The ones I used are
 
-- [embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
-- [monofont](https://quarto.org/docs/output-formats/html-themes.html#basic-options) to use Fira Code
-- [html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
-- [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) adds 
+-   [toc and toc-depth](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents) put the table of contents on the top-right part of the screen
+-   [embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
+-   [monofont](https://quarto.org/docs/output-formats/html-themes.html#basic-options) specifies the Fira Code font for code
+-   [html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
+-   [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) adds two scripts from the notebook's folder to the HTML header, one javascript and one CSS
 
+## MathJax Macros
 
-# Code Chunks and Plots
+The file `{r} repo_link("quarto_example.qmd", "examples/quarto/latex.js")` sets this Javascript object:
 
-```{r}
-head(mtcars)
+``` {.javascript .sourceCode}
+window.MathJax = {
+  tex: {
+    macros: {
+      y: "\\mathbf{y}",
+      X: "\\mathbf{X}",
+      R: "\\mathbb{R}",
+      eps: "\\varepsilon",
+      epsB: "\\boldsymbol{\\varepsilon}",
+      betaB: "\\boldsymbol{\\beta}",
+      Var: ["\\mathop{\\mathrm{Var}}", 0]
+    }
+  }
+};
 ```
 
+This is equivalent to the following $\LaTeX$ commands.
 
+-   `\def\y{\mathbf{y}}`
+-   `\def\X{\mathbf{X}}`
+-   `\def\R{\mathbb{R}}`
+-   `\def\eps{\varepsilon}`
+-   `\def\epsB{\boldsymbol{\varepsilon}}`
+-   `\def\betaB{\boldsymbol{\beta}}`
+-   `\DeclareMathOperator{\Var}{Var}`
 
-```{r}
-suppressPackageStartupMessages(library(tidyverse))
-theme_set(theme_bw())
+The `\def`s allow me to write the multivariate linear regression equation $\y=\X\betaB$ as `\y=\X\betaB`.
 
-df <- mtcars
-df |>
-  ggplot(aes(mpg, disp)) +
-  geom_point()
-```
+The `\DeclareMathOperator` lets you write `\Var\y` for statistical variance, $\Var\y$, in a way that looks nicer than, say `\textrm{Var}\y`=$\textrm{Var}\y$.
 
+## Code Chunk Options
 
+You may have noticed that some code chunks use options at the top like the following.
 
+-   `output=FALSE` - I use this when loading packages to prevent annoying messages from being printed in the HTML
+-   `fig.width=4, fig.height=3` - those control the dimensions of the image, and generally involve some trial and error to settle on
 
-# TODO: image preview example
-
-- `{r} image_preview_on_hover("image link text", "img/does_not_exist.PNG")`
-
-
+Code chunk options are generally part of the [`knitr`](https://yihui.org/knitr/) package (see for example [this page](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html)).
 
 ## References
 
-- $\LaTeX$ and MathJax
-  - [$\LaTeX$ Cheat Sheet](https://wch.github.io/latexsheet/)
-  - [The Comprehensive $\LaTeX$ Symbol List](https://us.mirrors.cicku.me/ctan/info/symbols/comprehensive/symbols-a4.pdf)
-  - MathJax documentation for [defining TeX macros](https://docs.mathjax.org/en/latest/input/tex/macros.html) in javascript
-- R
-  - [R for Data Science](https://r4ds.hadley.nz/) is a good intro to `dplyr` and several related packages.
-  - [ggplot2](https://ggplot2-book.org/)
-  - [Julia Silge's YouTube](https://www.youtube.com/@JuliaSilge/videos) has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with [tidymodels](https://www.tidymodels.org/)
-- Other
-  - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
-  - The Quarto website's [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) includes a bunch of links from above.
-  - [Install Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions)
-
-
-
+-   $\LaTeX$ and MathJax
+    -   [$\LaTeX$ Cheat Sheet](https://wch.github.io/latexsheet/)
+    -   [The Comprehensive $\LaTeX$ Symbol List](https://us.mirrors.cicku.me/ctan/info/symbols/comprehensive/symbols-a4.pdf)
+    -   MathJax documentation for [defining TeX macros](https://docs.mathjax.org/en/latest/input/tex/macros.html) in javascript
+-   R
+    -   [R for Data Science](https://r4ds.hadley.nz/) is a good intro to `dplyr` and several related packages.
+    -   [ggplot2](https://ggplot2-book.org/)
+    -   [Julia Silge's YouTube](https://www.youtube.com/@JuliaSilge/videos) has lots of good \~30min videos that take a data set, do some cleaning up, and then apply machine learning models with [tidymodels](https://www.tidymodels.org/)
+-   Other
+    -   [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+    -   The Quarto website's [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) includes a bunch of links from above.
+    -   [Install Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions)

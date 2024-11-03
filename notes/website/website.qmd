@@ -12,34 +12,34 @@ This section will describe the example in the main repo folder and the `{r} repo
 
 [Quarto websites](https://quarto.org/docs/websites/)
 
-Most of the focus here is on the configuration, because 
+Most of the focus here is on the configuration, because
 
 ## Files
 
 These are the main files in the root project folder that organize the website:
 
-- `_quarto.yml` - configuration file (see [Configuration](#configuration) below)
-- `index.qmd` - Quarto notebook that is the main page of the website
-- `README.qmd` - Quarto notebook rendered to `README.md` (see [Updating](#updating) below)
-- `jim.ico` - the icon shown in browser tabs (I wrote my name with MS Paint and converted the PNG file to ICO)
-- `scipts/`
-    - `util.R` - variables and functions that may be needed in various places
-    - `style.scss` - a Sass file used to create some CSS for the website
-    - `util.js` - one javascript function that's used when you click the button on the map's popups
-    - `latex.js` - some javascript that does the MathJax analog of $\LaTeX$ def/newcommand type commands (see the [MathJax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
-- `.gitignore` - used by git to specify filename patterns to exclude from the repo
-- `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
+-   `_quarto.yml` - configuration file (see [Configuration](#configuration) below)
+-   `index.qmd` - Quarto notebook that is the main page of the website
+-   `README.qmd` - Quarto notebook rendered to `README.md` (see [Updating](#updating) below)
+-   `jim.ico` - the page's [favicon](https://en.wikipedia.org/wiki/Favicon), made with MS Paint and converted to ICO
+-   `scipts/`
+    -   `util.R` - variables and functions that may be needed in various places
+    -   `style.scss` - a Sass file used to create some CSS for the website
+    -   `util.js` - one javascript function that's used when you click the button on the map's popups
+    -   `latex.js` - some javascript that does the MathJax analog of $\LaTeX$ def/newcommand type commands (see the [MathJax docs](https://docs.mathjax.org/en/latest/input/tex/macros.html))
+-   `.gitignore` - used by git to specify filename patterns to exclude from the repo
+-   `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
 
 The other website files are in these folders:
 
-- `notes/` has the Quarto notebooks that are rendered to HTML
-- `docs/` has all the rendered HTML/CSS/etc files that make up the site
+-   `notes/` has the Quarto notebooks that are rendered to HTML
+-   `docs/` has all the rendered HTML/CSS/etc files that make up the site
 
-## Configuration
+## Configuration {#configuration}
 
 The top of `_quarto.yml` describes the type of project, where the final website should go (`{r} repo_link("notes folder", "docs")`), and which Quarto notebook files need to be rendered to HTML.
 
-```
+``` {.yaml .sourceCode}
 project:
   type: website
   output-dir: docs
@@ -52,7 +52,7 @@ project:
 
 The next part determines the title/icon that appear on a browser tab, and the menus that are on the top navigation bar.
 
-```
+``` {.yaml .sourceCode}
 website:
   title: "Vermont State Notes"
   favicon: jim.ico
@@ -73,7 +73,7 @@ website:
 
 The last part is similar to the [Header](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) section of the Quarto notebook example. This is included in the header of each Quarto notebook that makes up the webpage.
 
-```
+``` {.yaml .sourceCode}
 format:
   html:
     theme: scripts/styles.scss
@@ -88,23 +88,23 @@ format:
       - text: <script type="text/javascript" src="/scripts/latex.js"></script>
 ```
 
-## Updating
+## Updating {#updating}
 
 To update the website, I first render the README - but only if `README.qmd` was changed.
 
-```
+``` {.bash .sourceCode}
 quarto render README.qmd -t md
 ```
 
 Then render the rest of the pages of the website.
 
-```
+``` {.bash .sourceCode}         
 quarto render
 ```
 
 To update the site, I add all changes to the git repo
 
-```
+``` {.bash .sourceCode}
 git add --all
 ```
 
@@ -112,8 +112,5 @@ and then commit the changes in RStudio and push the changes to github.
 
 ## References
 
-- [Quarto websites](https://quarto.org/docs/websites/)
-- [W3](https://www.w3schools.com/css/default.asp) can be good for info on HTML & CSS
-
-
-
+-   [Quarto websites](https://quarto.org/docs/websites/)
+-   [W3](https://www.w3schools.com/css/default.asp) can be good for info on HTML & CSS

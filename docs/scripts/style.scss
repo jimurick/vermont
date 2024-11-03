@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$white-dark:  #fbfbfb !default;
+$blue-dark:   #005587 !default;
+$pink:        #D01C65 !default;
+$yellow:      #FF7518 !default;
+$green:       #799A3E !default;
+$cyan:        #33A0BB !default;
+$cyan-dark:   #26778b !default;
+$brown:       #958579 !default;
+$brown-light: #e4e0dc !default;
+$brown-dark:  #665546 !default;
+
+$primary:       $cyan !default;
+$secondary:     $cyan-dark !default;
+$success:       $green !default;
+$info:          $brown !default;
+$warning:       $yellow !default;
+$danger:        $pink !default;
+$light:         $brown-light !default;
+$dark:          $brown-dark !default;
+
+
+/*-- scss:rules --*/
+
+
+/* css styles */
+
+code {
+  color: black;
+}
+

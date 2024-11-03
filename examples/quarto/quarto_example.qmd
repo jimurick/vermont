@@ -4,24 +4,28 @@ author: "Jim Urick"
 format:
   html:
     toc: true
+    toc-depth: 3
     embed-resources: true
     monofont: Fira Code
     html-math-method: mathjax
     include-in-header:
       - text: <script type="text/javascript" src="./latex.js"></script>
-      - text: <link rel="stylesheet" href="styles.css">
+      - text: <link rel="stylesheet" href="example_style.css">
 ---
 
+## Markup Languages
 
-## Markdown, R Markdown, Quarto
+Markdown and $\LaTeX$ are [markup languages](https://en.wikipedia.org/wiki/Markup_language). Notebooks generally allow some Markdown so you can write explanations in a more human-readable format. You can also include $\LaTeX$ in the Markdown.
 
-Markdown is a markup language. Find a cheat sheet [like this one](https://www.markdownguide.org/cheat-sheet/) to learn the syntax for things like
+### Markdown, R Markdown, Quarto
 
-- lists
-- **bold**, *italics* (also with _underscores_), `code`, ~~strikethrough~~
-- Images: ![This is the caption](../../jim.ico){width=20px}
+Markdown is very easy to learn; find a cheat sheet [like this one](https://www.markdownguide.org/cheat-sheet/) for the basic syntax like
 
-You can render notebooks (with the "Render" button) to a variety of formats, like PDF, HTML, slides or plain Markdown. The header here is set up to render to a standalone HTML file. 
+-   lists
+-   **bold**, *italics* (also with *underscores*), `code`, ~~strikethrough~~
+-   Images: ![This is the caption](../../jim.ico){width="20px"}
+
+You can render notebooks (with the "Render" button) to a variety of formats, like PDF, HTML, slides or plain Markdown. The header here is set up to render to a standalone HTML file.
 
 [R Markdown](https://rmarkdown.rstudio.com/) adds some more functionality to plain Markdown, like code chunks
 
@@ -30,14 +34,13 @@ x <- rnorm(10000)
 hist(x, 50)
 ```
 
-and inline R code: sin(1)=`{r} sin(1)`. You can create a new code chunk with Ctrl-Shift-I on a blank line.
+and inline R code: sin(1)=`{r} sin(1)`. In RStudio, you can create a new code chunk with Ctrl-Shift-I on a blank line.
 
 [Quarto](https://quarto.org/) is a newer version of R Markdown made by [Posit](https://posit.co/) (formerly named RStudio). Older notebook files may have an ".rmd" extension for R Markdown, while newer ".qmd" files are Quarto.
 
 Quarto adds some fancier things like [tabset panels](https://quarto.org/docs/interactive/layout.html#tabset-panel):
 
-:::{.panel-tabset}
-
+::: panel-tabset
 ## Normal Distribution
 
 ```{r}
@@ -51,11 +54,9 @@ hist(x, 50, main = "Normal")
 x <- rgamma(10000, shape = 2)
 hist(x, 50, main = "Gamma")
 ```
-
 :::
 
-
-## LaTeX with MathJax
+### LaTeX with MathJax
 
 MathJax is a Javascript engine that renders $\LaTeX$ in R Markdown. It doesn't do everything that $\LaTeX$ does, but it does enough for most purposes. Find some cheat sheets like [this one](https://quickref.me/latex.html) or [this one](https://wch.github.io/latexsheet/latexsheet.pdf) to learn how to do basics.
 
@@ -84,29 +85,28 @@ $$
 =\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}.
 $$
 
-Let $\phi_{\pm}=\tfrac12(1\pm\sqrt5)$ and diagonalize that matrix to show that
+Let $\phi_{\pm}=\tfrac12(1\pm\sqrt5)$ and diagonalize that matrix to show
 
 $$
 \begin{align*}
-\begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
-& =\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
-  \begin{pmatrix} 1 \\ 1 \end{pmatrix} \\
-& =\frac{1}{\sqrt{5}}
-\begin{pmatrix} 1 & -\phi_- \\ -1 & \phi_+ \end{pmatrix}
-\begin{pmatrix} \phi_+ & 0 \\ 0 & \phi_- \end{pmatrix}^n
-\begin{pmatrix} \phi_+ & \phi_- \\ 1 & 1 \end{pmatrix}
-\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+  \begin{pmatrix} f_{n+1} \\ f_{n} \end{pmatrix}
+  & =\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}^n
+    \begin{pmatrix} 1 \\ 1 \end{pmatrix} \\
+  & =\frac{1}{\sqrt{5}}
+    \begin{pmatrix} 1 & -\phi_- \\ -1 & \phi_+ \end{pmatrix}
+    \begin{pmatrix} \phi_+ & 0 \\ 0 & \phi_- \end{pmatrix}^n
+    \begin{pmatrix} \phi_+ & \phi_- \\ 1 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 \\ 1 \end{pmatrix}.
 \end{align*}
 $$
 
-## Macros
+### Macros
 
 You can also use some $\TeX$ macros like `\def\eps{\varepsilon}` in case you want a shortcut for $\varepsilon$ but don't want to overwrite `\epsilon`=$\epsilon$. That can be a little odd in a notebook because that code doesn't render to anything: $\def\eps{\varepsilon}$.
 
 It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see the [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header)). That file is described in the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html). I used it to define `\R`=$\R$ to be `\mathbb{R}`.
 
-
-## Two `tidyverse` Packages
+## R and the `tidyverse`
 
 If you're interested in working with data in R, it's a good idea to read Hadley Wickham's [R for Data Science](https://r4ds.hadley.nz/). The metapackage `tidyverse` includes most of the packages described there.
 
@@ -116,21 +116,26 @@ library(tidyverse)
 
 Two of the main packages are
 
-- [`ggplot2`](https://ggplot2-book.org/), based on the book The Grammar of Graphics, and
-- [`dplyr`](https://dplyr.tidyverse.org/), "a grammar for data manipulation".
+-   [`ggplot2`](https://ggplot2-book.org/), based on the book [The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0), and
+-   [`dplyr`](https://dplyr.tidyverse.org/), "a grammar for data manipulation".
 
-To get practice, it can help to know that R loads some dataset like `mtcars` from the `datasets` package.
+To get practice, it can help to know that R loads some dataframes automatically like `mtcars` from the old [`datasets`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) package.
 
 ```{r}
 head(mtcars)
 ```
 
-You should also get used to the [pipe operator](https://ggplot2-book.org/) `|>`. It's two characters, a vertical line `|` and greater than `>`, but the Fira Code font combines them into something like $\LaTeX$'s `\triangleright` ($\triangleright$).
+### Pipes
 
-```{r}
-# equivalent to head(mtcars)
-mtcars |> head()
-```
+You should get used to the [**pipe operator**](https://r4ds.hadley.nz/data-transform.html#sec-the-pipe) `|>`. It's two characters, a vertical line `|` and greater than `>`, but the Fira Code font combines them into something like $\LaTeX$'s `\triangleright` ($\triangleright$). There's also an operator `%>%` you can use in the same way as `|>`; it's just the older name for the same function.
+
+The pipe operator is a simple syntax change: `x |> f(y)` is equivalent to `f(x,y)`. It allows you to **chain together** a bunch of **function compositions** in a way that's more readable.
+
+For example, in the next code chunk, starting from the `mtcars` dataframe, you
+
+1.  select only the columns `mpg` and `disp`,
+2.  add in the column `nonsense` by adding those two columns, and
+3.  filter down to just the first 6 rows.
 
 ```{r}
 mtcars |>
@@ -139,19 +144,33 @@ mtcars |>
   head()
 ```
 
+Without `|>`, you have to read the function composition from the inside:
 
 ```{r}
-head(mutate(select(mtcars, mpg, disp), nonsense = mpg + disp))
+head(
+  mutate(
+    select(mtcars, mpg, disp),
+    nonsense = mpg + disp
+  )
+)
 ```
 
+The function `|>` is actually from the [`magrittr`](https://magrittr.tidyverse.org/) package, but it's most often used to chain together functions from [`dplyr`](https://dplyr.tidyverse.org/). Both of those where loaded with the `library(tidyverse)` command.
 
+### Plots
+
+The next code chunk shows a simple scatter plot using the [`ggplot2`](https://ggplot2.tidyverse.org/) package, included in the tidyverse. It just consists of
+
+-   an [aesthetic mapping](https://ggplot2-book.org/getting-started#sec-aesthetics), specifying that the `mpg` column goes to the x-axis and `disp` goes to the y-axis, and
+-   a [geom](https://ggplot2-book.org/getting-started#sec-plot-geoms), specifying that records will be displayed as points.
 
 ```{r, fig.width=4, fig.height=3}
 mtcars |>
-  ggplot(aes(mpg, disp)) +
+  ggplot(aes(x = mpg, y = disp)) +
   geom_point()
 ```
 
+You can add color with a `color` aesthetic mapping. This also specifies that all points have a bigger size and some transparency.
 
 ```{r, fig.width=4, fig.height=3}
 mtcars |>
@@ -159,6 +178,7 @@ mtcars |>
   geom_point(size = 3, alpha = 0.6)
 ```
 
+Making a plot is generally an iterative process. Maybe this one is good enough.
 
 ```{r, fig.width=5, fig.height=3}
 mtcars |>
@@ -172,3 +192,27 @@ mtcars |>
           subtitle = "with linear regression lines")
 ```
 
+You can also make plots more interactive with packages like [plotly](https://plotly.com/r/getting-started/).
+
+```{r, output=FALSE}
+library(plotly)
+```
+
+That has a function `ggplotly()` that translates static ggplot objects to plotly plots.
+
+```{r}
+p <-
+  mtcars |>
+  mutate(cyl = factor(cyl)) |>
+  ggplot(aes(mpg, disp, color = cyl, group = cyl)) +
+  geom_point(size = 3, alpha = 0.6) +
+  geom_smooth(method = 'lm', formula = y~x, se = FALSE) +
+  theme_bw() +
+  theme(legend.position = "inside", legend.position.inside = c(0.85, 0.7)) +
+  ggtitle("disp vs mpg, grouped by cyl",
+          subtitle = "with linear regression lines")
+
+ggplotly(p)
+```
+
+As you may notice, `ggplotly()` doesn't translate things 100%: the legend above is outside the grid and there's no subtitle. It generally does pretty well, and you can use the internet to fix the rest.
