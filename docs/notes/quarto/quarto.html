@@ -246,14 +246,21 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link rel="stylesheet" href="example_style.css"&gt;</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link href="https://fonts.googleapis.com/css?family=Fira+Code"</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">                    rel="stylesheet"&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> &lt;link rel="shortcut icon" href="jim.ico"&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can find lots of options in the <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Basics</a> documentation page. The ones I used are</p>
 <ul>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#table-of-contents">toc and toc-depth</a> put the table of contents on the top-right part of the screen</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained">embed-resources</a> renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.</li>
 <li><a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">monofont</a> specifies the Fira Code font for code</li>
 <li><a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">html-math-methods</a> specifies <a href="https://www.mathjax.org/">MathJax</a> as the engine for rendering math</li>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> adds two scripts from the notebook’s folder to the HTML header, one javascript and one CSS, and links to google’s <a href="https://fonts.google.com/specimen/Fira+Code">Fira Code</a> font.</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#includes">include-in-header</a> brings in a few files:
+<ul>
+<li>a Javascript script for <span class="math inline">\(\LaTeX\)</span> macros,</li>
+<li>a CSS file to change the color of text in<code>&lt;code&gt;</code> elements,</li>
+<li>Google’s <a href="https://fonts.google.com/specimen/Fira+Code">Fira Code</a> font, and</li>
+<li>my logo, <img src="../../jim.ico" class="img-fluid" width="20">, for the <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="mathjax-macros" class="level2">
@@ -301,13 +308,14 @@ window.Quarto = {
 <ul>
 <li><a href="https://wch.github.io/latexsheet/"><span class="math inline">\(\LaTeX\)</span> Cheat Sheet</a></li>
 <li><a href="https://us.mirrors.cicku.me/ctan/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive <span class="math inline">\(\LaTeX\)</span> Symbol List</a></li>
-<li>MathJax documentation for <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">defining TeX macros</a> in javascript</li>
+<li>MathJax documentation for <a href="https://docs.mathjax.org/en/latest/input/tex/macros.html">defining <span class="math inline">\(\TeX\)</span> macros</a> in javascript</li>
 </ul></li>
 <li>R
 <ul>
 <li><a href="https://r4ds.hadley.nz/">R for Data Science</a> is a good intro to <code>dplyr</code> and several related packages.</li>
-<li><a href="https://ggplot2-book.org/">ggplot2</a></li>
+<li><a href="https://ggplot2-book.org/">ggplot2</a> gives an overview of how the <code>ggplot2</code> package works</li>
 <li><a href="https://www.youtube.com/@JuliaSilge/videos">Julia Silge’s YouTube</a> has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with <a href="https://www.tidymodels.org/">tidymodels</a></li>
+<li><a href="https://www.tmwr.org/">Tidy Modeling with R</a> is a very good intro to <code>tidymodels</code> and organizing basic machine learning model projects</li>
 </ul></li>
 <li>Other
 <ul>

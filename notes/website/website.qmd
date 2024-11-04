@@ -97,7 +97,7 @@ quarto render examples/quarto/quarto_example.qmd
 
 Then render the rest of the website.
 
-``` {.bash .sourceCode}         
+``` {.bash .sourceCode}
 quarto render
 ```
 
