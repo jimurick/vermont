@@ -108,7 +108,7 @@ $$
 
 You can also use some $\TeX$ macros like `\def\eps{\varepsilon}` in case you want a shortcut for `\varepsilon`=$\varepsilon$ but don't want to overwrite `\epsilon`=$\epsilon$. However, `\def` commands like that can be a little odd in a notebook because that code doesn't render to anything: $\def\eps{\varepsilon}$.
 
-It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see my [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) and the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html). I used it to define `\R`=$\R$ to be `\mathbb{R}`.
+It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see my [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) and the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html)). I used it to define `\R`=$\R$ to be `\mathbb{R}`.
 
 ## R and the `tidyverse`
 
