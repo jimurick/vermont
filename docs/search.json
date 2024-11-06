@@ -77,11 +77,11 @@
     "text": "The notes here are for 3 examples:"
   },
   {
-    "objectID": "index.html#prerequisites",
-    "href": "index.html#prerequisites",
+    "objectID": "index.html#prerequisites-setup",
+    "href": "index.html#prerequisites-setup",
     "title": "Vermont State Notes",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nYou should install\n\nThe R language (Windows, macOS)\nRStudio\nGit (or GitHub Desktop)\n\nYou can then clone the vermont repo to some location on your computer using Git Bash (if you installed Git above) or using GitHub Desktop\nOpen that repo and\n\nIf you want to run the Shiny app, follow the instructions in hospitalstars to install that R package."
+    "section": "Prerequisites & Setup",
+    "text": "Prerequisites & Setup\n\nInstall\n\nThe R language (Windows, macOS) - I’m using 4.4.2\nRStudio\nGit (or GitHub Desktop)\n\nYou can then clone the vermont repo to some location on your computer using Git Bash (if you installed Git above) or using GitHub Desktop\nOpen the project.\n\nOpen RStudio and click File → Open Project…\nIn the file dialog, go in the vermont repo folder you just created, and open the file 'vermont.Rproj'\nIn the RStudio Console window, run the R function renv::restore()\n\n(Optional) If you want to run the Shiny app, you’ll need to install my hospitalstars package first.\n\nIn the RStudio Console, run the R command renv::install(\"devtools\").\nFollow the installation instructions in the hospitalstars README"
   },
   {
     "objectID": "notes/website/website.html",

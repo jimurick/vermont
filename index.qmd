@@ -17,17 +17,18 @@ The notes here are for 3 examples:
     -   R script: [`vermont/examples/shiny/app.R`](https://github.com/jimurick/vermont/blob/main/examples/shiny/app.R)
     -   Depends on the R package [`hospitalstars`](https://github.com/jimurick/hospitalstars)
 
-## Prerequisites
+## Prerequisites & Setup
 
-You should install
-
--   The R language ([Windows](https://cran.r-project.org/bin/windows/base/), [macOS](https://cran.r-project.org/bin/macosx/)) - I'm using 4.4.2
--   [RStudio](https://posit.co/download/rstudio-desktop/)
--   [Git](https://git-scm.com/downloads) (or [GitHub Desktop](https://desktop.github.com/download/))
-
-You can then clone the [`vermont` repo](https://github.com/jimurick/vermont) to some location on your computer [using Git Bash](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository) (if you installed Git above) or [using GitHub Desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop)
-
-Open that repo and
-
--   If you want to run the Shiny app, follow the instructions in [`hospitalstars`](https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation) to install that R package.
+1. Install
+    -   The R language ([Windows](https://cran.r-project.org/bin/windows/base/), [macOS](https://cran.r-project.org/bin/macosx/)) - I'm using 4.4.2
+    -   [RStudio](https://posit.co/download/rstudio-desktop/)
+    -   [Git](https://git-scm.com/downloads) (or [GitHub Desktop](https://desktop.github.com/download/))
+2. You can then clone the [`vermont` repo](https://github.com/jimurick/vermont) to some location on your computer [using Git Bash](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository) (if you installed Git above) or [using GitHub Desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop)
+3. Open the project.
+    - Open RStudio and click File → Open Project...
+    - In the file dialog, go in the `vermont` repo folder you just created, and open the file `'vermont.Rproj'`
+    - In the RStudio Console window, run the R function `renv::restore()`
+4. (Optional) If you want to run the Shiny app, you'll need to install my `hospitalstars` package first.
+    - In the RStudio Console, run the R command `renv::install("devtools")`.
+    - Follow the installation instructions in the [`hospitalstars` README](https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation)
 

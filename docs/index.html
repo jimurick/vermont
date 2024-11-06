@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#prerequisites-setup" id="toc-prerequisites-setup" class="nav-link active" data-scroll-target="#prerequisites-setup">Prerequisites &amp; Setup</a></li>
   </ul>
 </nav>
     </div>
@@ -187,19 +187,28 @@ ul.task-list li input[type="checkbox"] {
 <li>Depends on the R package <a href="https://github.com/jimurick/hospitalstars"><code>hospitalstars</code></a></li>
 </ul></li>
 </ul>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>You should install</p>
+<section id="prerequisites-setup" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites-setup">Prerequisites &amp; Setup</h2>
+<ol type="1">
+<li>Install
 <ul>
-<li>The R language (<a href="https://cran.r-project.org/bin/windows/base/">Windows</a>, <a href="https://cran.r-project.org/bin/macosx/">macOS</a>)</li>
+<li>The R language (<a href="https://cran.r-project.org/bin/windows/base/">Windows</a>, <a href="https://cran.r-project.org/bin/macosx/">macOS</a>) - I’m using 4.4.2</li>
 <li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
 <li><a href="https://git-scm.com/downloads">Git</a> (or <a href="https://desktop.github.com/download/">GitHub Desktop</a>)</li>
-</ul>
-<p>You can then clone the <a href="https://github.com/jimurick/vermont"><code>vermont</code> repo</a> to some location on your computer <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository">using Git Bash</a> (if you installed Git above) or <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop">using GitHub Desktop</a></p>
-<p>Open that repo and</p>
+</ul></li>
+<li>You can then clone the <a href="https://github.com/jimurick/vermont"><code>vermont</code> repo</a> to some location on your computer <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository">using Git Bash</a> (if you installed Git above) or <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop">using GitHub Desktop</a></li>
+<li>Open the project.
 <ul>
-<li>If you want to run the Shiny app, follow the instructions in <a href="https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation"><code>hospitalstars</code></a> to install that R package.</li>
-</ul>
+<li>Open RStudio and click File → Open Project…</li>
+<li>In the file dialog, go in the <code>vermont</code> repo folder you just created, and open the file <code>'vermont.Rproj'</code></li>
+<li>In the RStudio Console window, run the R function <code>renv::restore()</code></li>
+</ul></li>
+<li>(Optional) If you want to run the Shiny app, you’ll need to install my <code>hospitalstars</code> package first.
+<ul>
+<li>In the RStudio Console, run the R command <code>renv::install("devtools")</code>.</li>
+<li>Follow the installation instructions in the <a href="https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation"><code>hospitalstars</code> README</a></li>
+</ul></li>
+</ol>
 
 
 </section>
