@@ -1,5 +1,13 @@
 
-# 
+# By default, shiny's `selectInput()` widget will put the label above the
+# <select>, while I often prefer to have both on the same line.
+#
+# This function fixes that using the `htmltools::tagQuery()` function to
+# chain together modifications to the widget's HTML. Its syntax is similar to
+# chaining together dplyr functions with the pipe operator `|>`, except with
+# the "extract operator" `$`.
+#
+# See Outstanding User Interfaces with Shiny:
 # https://unleash-shiny.rinterface.com/htmltools-overview#htmltools-modern
 
 select_input_to_inline <- function(select_input, label_width, select_width) {

@@ -34,7 +34,7 @@ measure_choices <-
   deframe()
 
 
-# `ui`: the user interface -----------------------------------------------------
+# ui: the user interface -----------------------------------------------------
 
 ui <-
   navbarPage(
@@ -53,6 +53,7 @@ ui <-
       tags$head(tags$script(type="text/javascript", src="util.js")),
       selectInput("state", "Choose a State",
                   choices = state_choices, selected = "VT") |>
+        # function from "util.R" to fix how this input is displayed
         select_input_to_inline(label_width = 12, select_width = 10),
       div(style = "height: 1rem;"), # put some space before the map
       leafletOutput("map"),
@@ -61,8 +62,10 @@ ui <-
       title = "Plot",
       tags$h3("Hospital Scores vs Overall 5-number Summaries"),
       selectizeInput("provider_id", "Choose a Hospital", choices = NULL) |>
+        # function from "util.R" to fix how this input is displayed
         select_input_to_inline(label_width = 15, select_width = 40),
       selectizeInput("measure_id", "Choose a Measure", choices = measure_choices) |>
+        # function from "util.R" to fix how this input is displayed
         select_input_to_inline(label_width = 15, select_width = 40),
       div(style = "height: 1rem;"), # put some space before the plot
       plotlyOutput("plot")
@@ -77,7 +80,7 @@ ui <-
   )
 
 
-# `server`: defines interaction ------------------------------------------------
+# server: defines interaction ------------------------------------------------
 
 server <- function(input, output, session) {
   

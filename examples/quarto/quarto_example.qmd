@@ -112,7 +112,7 @@ It's often better to use javascript, like the file "latex.js" in this directory,
 
 ## R and the `tidyverse`
 
-If you're interested in working with data in R, it's a good idea to read Hadley Wickham's [R for Data Science](https://r4ds.hadley.nz/). The metapackage `tidyverse` includes most of the packages described there.
+If you're interested in working with data in R, it's a good idea to read Hadley Wickham's [R for Data Science](https://r4ds.hadley.nz/). The metapackage [`tidyverse`](https://www.tidyverse.org/) includes most of the packages described there.
 
 ```{r, output=FALSE}
 library(tidyverse)
@@ -138,7 +138,7 @@ The pipe operator is a simple syntax change: `x |> f(y)` is equivalent to `f(x,y
 For example, in the next code chunk, starting from the `mtcars` dataframe, you
 
 1.  select only the columns `mpg` and `disp`,
-2.  add in the column `nonsense` by adding those two columns, and
+2.  define the column `nonsense` by adding those two columns, and
 3.  filter down to just the first 6 rows.
 
 ```{r}
@@ -165,7 +165,7 @@ The function `|>` is actually from the [`magrittr`](https://magrittr.tidyverse.o
 
 The next code chunk shows a simple scatter plot using the [`ggplot2`](https://ggplot2.tidyverse.org/) package, included in the tidyverse. It just consists of
 
--   an [aesthetic mapping](https://ggplot2-book.org/getting-started#sec-aesthetics), specifying that the `mpg` column goes to the x-axis and `disp` goes to the y-axis, and
+-   an [aesthetic mapping](https://ggplot2-book.org/getting-started#sec-aesthetics), specifying that the `mpg` column is the x-axis and `disp` is the y-axis, and
 -   a [geom](https://ggplot2-book.org/getting-started#sec-plot-geoms), specifying that records will be displayed as points.
 
 ```{r, fig.width=4, fig.height=3}
@@ -196,13 +196,13 @@ mtcars |>
           subtitle = "with linear regression lines")
 ```
 
-You can also make plots more interactive with packages like [plotly](https://plotly.com/r/getting-started/).
+You can also make plots more interactive with packages like [`plotly`](https://plotly.com/r/getting-started/).
 
 ```{r, output=FALSE}
 library(plotly)
 ```
 
-That has a function `ggplotly()` that translates static ggplot objects to plotly plots.
+That has a function `ggplotly()` that translates static `ggplot2` objects to `plotly` plots.
 
 ```{r}
 p <-
