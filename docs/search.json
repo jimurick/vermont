@@ -81,7 +81,7 @@
     "href": "index.html#prerequisites",
     "title": "Vermont State Notes",
     "section": "Prerequisites",
-    "text": "Prerequisites\nYou should install\n\nThe R language (Windows, macOS)\nRStudio\nIf you want to run the Shiny app, the hospitalstars R package\nGit (or GitHub Desktop)\n\nYou can then clone the vermont repo to some location on your computer using Git Bash (if you installed Git above) or using GitHub Desktop"
+    "text": "Prerequisites\nYou should install\n\nThe R language (Windows, macOS)\nRStudio\nGit (or GitHub Desktop)\n\nYou can then clone the vermont repo to some location on your computer using Git Bash (if you installed Git above) or using GitHub Desktop\nOpen that repo and\n\nIf you want to run the Shiny app, follow the instructions in hospitalstars to install that R package."
   },
   {
     "objectID": "notes/website/website.html",
