@@ -103,4 +103,4 @@ Code chunk options are generally part of the [`knitr`](https://yihui.org/knitr/)
 -   Other
     -   [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
     -   The Quarto website's [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) includes a bunch of links from above.
-    -   [Install the Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions) font
+    -   Install the [Fira Code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions) font

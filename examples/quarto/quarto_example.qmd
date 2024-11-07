@@ -108,7 +108,7 @@ $$
 
 You can also use some $\TeX$ macros like `\def\eps{\varepsilon}` in case you want a shortcut for `\varepsilon`=$\varepsilon$ but don't want to overwrite `\epsilon`=$\epsilon$. However, `\def` commands like that can be a little odd in a notebook because that code doesn't render to anything: $\def\eps{\varepsilon}$.
 
-It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see my [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) and the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html)). I used it to define `\R`=$\R$ to be `\mathbb{R}`.
+It's often better to use javascript, like the file "latex.js" in this directory, which is included in the header (see my [notes](https://jimurick.github.io/vermont/notes/quarto/quarto.html#header) and the [MathJax documentation](https://docs.mathjax.org/en/latest/input/tex/macros.html)). I used it to define `\def\R{\mathbb{R}}`` so `\R`=$\R$.
 
 ## R and the `tidyverse`
 
@@ -133,7 +133,7 @@ head(mtcars)
 
 You should get used to the [**pipe operator**](https://r4ds.hadley.nz/data-transform.html#sec-the-pipe) `|>`. It's two characters, a vertical line `|` and greater than `>`, but the Fira Code font combines them into something like $\LaTeX$'s `\triangleright` ($\triangleright$). There's also an operator `%>%` you can use in the same way as `|>`; it's just the older name for the same function.
 
-The pipe operator is a simple syntax change: `x |> f(y)` is equivalent to `f(x,y)`. It allows you to **chain together** a bunch of **function compositions** in a way that's more readable.
+The pipe operator is a simple syntax change: `x |> f(y)` is equivalent to `f(x,y)`. It allows you to **chain together** a bunch of **function compositions** in a way that's **more readable**.
 
 For example, in the next code chunk, starting from the `mtcars` dataframe, you
 
@@ -148,7 +148,7 @@ mtcars |>
   head()
 ```
 
-Without `|>`, you have to read the function composition from the inside:
+Without `|>`, you have to read the function composition from the inside, and the indentation keeps drifting to the right:
 
 ```{r}
 head(

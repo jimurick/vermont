@@ -23,12 +23,13 @@ These are the main files in the root project folder that organize the website:
     -   `style.scss` - a Sass file used to create some CSS for the website
     -   `latex.js` - javascript defining $\LaTeX$ macros (see the [Quarto notes](./notes/quarto/quarto.html#mathjax-macros))
 -   `.gitignore` - used by git to specify filename patterns to exclude from the repo
--   `.Rprofile` - run when the project is opened; it defines some functions I want to be generally available
+-   `renv/` and `renv.lock` - files used by the [`renv`](https://rstudio.github.io/renv/articles/renv.html) package to maintain a reproducible R environment for this project
+-   `.Rprofile` - run when the project is opened; it activates the `renv` environment and defines some functions I want to be generally available
 
 The other website files are in these folders:
 
--   `notes/` has the Quarto notebooks that are rendered to HTML
--   `docs/` has all the rendered HTML/CSS/etc files that make up the site
+-   `notes/` has the Quarto notebooks I wrote
+-   `docs/` is where all the website files (HTML/CSS/etc) are rendered to
 
 ## Configuration {#configuration}
 

@@ -243,12 +243,13 @@ window.Quarto = {
 <li><code>latex.js</code> - javascript defining <span class="math inline">\(\LaTeX\)</span> macros (see the <a href="./notes/quarto/quarto.html#mathjax-macros">Quarto notes</a>)</li>
 </ul></li>
 <li><code>.gitignore</code> - used by git to specify filename patterns to exclude from the repo</li>
-<li><code>.Rprofile</code> - run when the project is opened; it defines some functions I want to be generally available</li>
+<li><code>renv/</code> and <code>renv.lock</code> - files used by the <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a> package to maintain a reproducible R environment for this project</li>
+<li><code>.Rprofile</code> - run when the project is opened; it activates the <code>renv</code> environment and defines some functions I want to be generally available</li>
 </ul>
 <p>The other website files are in these folders:</p>
 <ul>
-<li><code>notes/</code> has the Quarto notebooks that are rendered to HTML</li>
-<li><code>docs/</code> has all the rendered HTML/CSS/etc files that make up the site</li>
+<li><code>notes/</code> has the Quarto notebooks I wrote</li>
+<li><code>docs/</code> is where all the website files (HTML/CSS/etc) are rendered to</li>
 </ul>
 </section>
 <section id="configuration" class="level2">
