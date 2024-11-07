@@ -67,7 +67,7 @@
     "href": "notes/quarto/quarto.html#references",
     "title": "Quarto Notebook Example",
     "section": "References",
-    "text": "References\n\n\\(\\LaTeX\\) and MathJax\n\n\\(\\LaTeX\\) Cheat Sheet\nThe Comprehensive \\(\\LaTeX\\) Symbol List\nMathJax documentation for defining \\(\\TeX\\) macros in javascript\n\nR\n\nR for Data Science is a good intro to dplyr and several related packages\nggplot2 gives an overview of how the ggplot2 package works\nJulia Silge’s YouTube has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with tidymodels\nTidy Modeling with R is a very good intro to tidymodels and organizing basic machine learning model projects\n\nOther\n\nMarkdown Cheat Sheet\nThe Quarto website’s HTML Basics includes a bunch of links from above.\nInstall Fira Code"
+    "text": "References\n\n\\(\\LaTeX\\) and MathJax\n\n\\(\\LaTeX\\) Cheat Sheet\nThe Comprehensive \\(\\LaTeX\\) Symbol List\nMathJax documentation for defining \\(\\TeX\\) macros in javascript\n\nR\n\nR for Data Science is a good intro to dplyr and several related packages\nggplot2 gives an overview of how the ggplot2 package works\nJulia Silge’s YouTube has lots of good ~30min videos that take a data set, do some cleaning up, and then apply machine learning models with tidymodels\nTidy Modeling with R is a very good intro to tidymodels and organizing basic machine learning model projects\n\nOther\n\nMarkdown Cheat Sheet\nThe Quarto website’s HTML Basics includes a bunch of links from above.\nInstall the Fira Code font"
   },
   {
     "objectID": "index.html",
