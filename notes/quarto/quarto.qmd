@@ -36,11 +36,11 @@ format:
 
 You can find lots of options in the [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html) documentation page. The ones I used are
 
--   [toc and toc-depth](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents) put the table of contents on the top-right part of the screen
--   [embed-resources](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
--   [monofont](https://quarto.org/docs/output-formats/html-themes.html#basic-options) specifies the Fira Code font for code
--   [html-math-methods](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
--   [include-in-header](https://quarto.org/docs/output-formats/html-basics.html#includes) brings in a few files:
+-   [`toc and toc-depth`](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents) put the table of contents on the top-right part of the screen
+-   [`embed-resources`](https://quarto.org/docs/output-formats/html-basics.html#self-contained) renders the qmd file to a single HTML file, which includes dependencies like javascript or image files. This makes it easier to share.
+-   [`monofont`](https://quarto.org/docs/output-formats/html-themes.html#basic-options) specifies the Fira Code font for code
+-   [`html-math-methods`](https://quarto.org/docs/output-formats/html-basics.html#latex-equations) specifies [MathJax](https://www.mathjax.org/) as the engine for rendering math
+-   [`include-in-header`](https://quarto.org/docs/output-formats/html-basics.html#includes) brings in a few files:
     -   a Javascript script for $\LaTeX$ macros,
     -   a CSS file to change the color of text in`<code>` elements,
     -   Google's [Fira Code](https://fonts.google.com/specimen/Fira+Code) font, and
