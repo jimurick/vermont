@@ -38,7 +38,7 @@ x <- rnorm(10000)
 hist(x, 50)
 ```
 
-and inline R code: sin(1)=`{r} sin(1)`. In RStudio, you can create a new code chunk with Ctrl-Shift-I on a blank line.
+and inline R code: sin(1)=`{r} sin(1)`. In RStudio, you can create a new code chunk with Ctrl-Alt-I on a blank line.
 
 [Quarto](https://quarto.org/) is a newer version of R Markdown made by [Posit](https://posit.co/) (formerly named RStudio). Older notebook files may have an ".rmd" extension for R Markdown, while newer ".qmd" files are Quarto.
 

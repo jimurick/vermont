@@ -197,15 +197,11 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://git-scm.com/downloads">Git</a> (or <a href="https://desktop.github.com/download/">GitHub Desktop</a>)</li>
 </ul></li>
 <li>You can then clone the <a href="https://github.com/jimurick/vermont"><code>vermont</code> repo</a> to some location on your computer <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository">using Git Bash</a> (if you installed Git above) or <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop">using GitHub Desktop</a></li>
-<li>Open the project.
-<ul>
-<li>Open RStudio and click File → Open Project…</li>
-<li>In the file dialog, go in the <code>vermont</code> repo folder you just created, and open the file <code>'vermont.Rproj'</code></li>
+<li>Open a file browser in the <code>vermont</code> folder you just created, and double-click the file <code>'vermont.Rproj'</code>.</li>
 <li>In the RStudio Console window, run the R function <code>renv::restore()</code></li>
-</ul></li>
 <li>(Optional) If you want to run the Shiny app, you’ll need to install my <code>hospitalstars</code> package first.
 <ul>
-<li>In the RStudio Console, run the R command <code>renv::install("devtools")</code>.</li>
+<li>In the RStudio Console, run the R command <code>install.packages("devtools")</code>.</li>
 <li>Follow the installation instructions in the <a href="https://github.com/jimurick/hospitalstars?tab=readme-ov-file#installation"><code>hospitalstars</code> README</a></li>
 </ul></li>
 </ol>
